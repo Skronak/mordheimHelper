@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: #2b2b2b;
+  font-size: 1.1rem;
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
+}
+
+.link {
+  padding: 0 1.3rem;
+  text-decoration:none;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  line-height: 2em;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+@media (max-width: 300px) {
+  .link {
+    align-self: auto;
+  }
+}
+
+.home-footer {
+  overflow: hidden;
+}
+
+.home-logo {
+  width: 100%;
+  padding: 5% 5% 0 5%;
+}
+
+.home-container-form {
+  background-color: white;
+}
+.home-button {
+  background-color: #2b2b2b;
+  width: 100%;
+}
+
+button {
+  padding: 0 1.3rem;
+  border: none;
+  background: #ff5e5e;
+  line-height: 2em;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  transform: background 0.2s ease-out;
+}
+
+button:hover {
+  background: #ff5e5e;
+}
+
+.army-name {
+  width: 100%;
+  display: flex;
+}
+
+.army-logo {
+  height: 4em;
+}
+
+.user-army-row{
+  display: flex;
+}
+
+.link-active{
+  color: yellow;
+}
