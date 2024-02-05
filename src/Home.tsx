@@ -14,7 +14,7 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="home-container-form">
+            <div className="home-content-container">
                 <img className={"home-logo"} src={getAssetUrl("mordheimLogo.png")}/>
                 <button className='home-button' onClick={handleButtonClick}>ENTRER</button>
             </div>

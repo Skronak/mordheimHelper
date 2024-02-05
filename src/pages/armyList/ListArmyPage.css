@@ -1,0 +1,15 @@
+.icon-button {
+    width: 10%;
+
+    & img{
+        width: 3em;
+        height: 3em;
+    }
+}
+
+.user-army-row {
+    height: 3em;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 0.2em;
+}

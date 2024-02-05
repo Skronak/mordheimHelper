@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+}
+
+.navigation-header {
+    flex-shrink: 0;
+}
+
+.content-container {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+}
+
+footer {
+    flex-shrink: 0;
+}

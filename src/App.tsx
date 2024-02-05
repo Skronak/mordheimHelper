@@ -4,11 +4,12 @@ import {ArmyPage} from "@/pages/createArmy/ArmyPage";
 import Header from "./pages/Header";
 import ListArmyPage from "@/pages/armyList/ListArmyPage";
 import HomePage from "./Home";
+import "./App.css";
 
 const App: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <>
             <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage/>} />
@@ -18,6 +19,9 @@ const App: React.FC = () => {
                     <Route path="/edit/:idArmy" element={<ArmyPage/>} />
                     <Route path="*" element={<Navigate to="/"/>} />
                 </Routes>
-        </div>
+            <footer>
+                <h3>mordheim list builder</h3>
+            </footer>
+        </>
     );
 };export default App;
