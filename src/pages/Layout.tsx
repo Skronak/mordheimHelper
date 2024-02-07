@@ -11,7 +11,7 @@ export default function Layout(props: Props){
   return (
     <>
       <Header title={props.title}/>
-      {props.children}
+        <div className="content-container">{props.children}</div>
       <Footer />
   </>
   )

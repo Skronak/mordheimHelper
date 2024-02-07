@@ -43,6 +43,7 @@ button:hover {
 .army-name {
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 .army-logo {

@@ -33,12 +33,14 @@ export default function ListArmyPage() {
 
     return (
       <Layout title={'WARBANDS'}>
-        <div className="content-container">
-            <div>Availables list : {playerArmies.length}</div>
-            <button className={"army-name"} onClick={() => setShowPopup(true)}>+</button>
+        <div className={'list-army-page'}>
+            <div className={'add-army-container'}>
+                <div className={'add-army-label'}>Availables list : {playerArmies.length}</div>
+                <button className={'icon-button btn-plus'} onClick={() => setShowPopup(true)}><img src={'/src/assets/icons/icon_plus.svg'}/></button>
+            </div>
             {showPopup && (
                 <ArmySelectModal title="Selectionnez une armée" onClose={() => setShowPopup(false)} data={appData}/>)}
-            <br/>
+
             <div className="player-armies">
                 {playerArmies && playerArmies.map(army => (
                     <span key={army.id} className={"user-army-row"}>

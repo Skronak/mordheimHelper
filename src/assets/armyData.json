@@ -92,5 +92,214 @@
         ]
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Beast Herds",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 3,
+    "name": "Daemon Legions",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 4,
+    "name": "Dread Elves",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 5,
+    "name": "Dwarven Holds",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+  "id": 6,
+  "name": "Empire of Sonnstahl",
+  "icon": "icon-beast.png",
+  "race": "Humain",
+  "skills": [
+    {
+      "name": "",
+      "effect": ""
+    }
+  ],
+  "units": []
+  },  {
+    "id": 7,
+    "name": "Highborn Elves",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 8,
+    "name": "Infernal Dwarves",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 9,
+    "name": "Kingdom of Equitaine",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 10,
+    "name": "Ogre Khans",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 11,
+    "name": "Orcs and Goblins",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 13,
+    "name": "Saurian Ancients",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 14,
+    "name": "Sylvan Elves",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 15,
+    "name": "Undying Dynasties",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 16,
+    "name": "Vampire Covenant",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 17,
+    "name": "Dread Elves",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 18,
+    "name": "Vermin Swarm",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 19,
+    "name": "Warriors of the Dark Gods",
+    "icon": "icon-beast.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
   }
 ]

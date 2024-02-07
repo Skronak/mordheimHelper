@@ -29,6 +29,7 @@ body {
     flex-grow: 1;
     overflow: auto;
     min-height: 2em;
+    padding-top: 1em;
 }
 
 .navigation-footer {
