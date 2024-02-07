@@ -1,11 +1,11 @@
 import {ArmyRef} from "@/army";
 
 export function getAssetUrl(name: string) {
-    return new URL(`/src/assets/${name}`, import.meta.url).href;
+    return `/assets/${name}`;
 }
 
 export function getPortraitAssetUrl(name: string) {
-    return new URL(`/src/assets/portrait/${name}`, import.meta.url).href;
+    return `/assets/portrait/${name}`;
 }
 
 

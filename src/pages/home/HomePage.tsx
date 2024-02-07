@@ -2,8 +2,8 @@ import React from "react";
 import "./HomePage.css";
 
 import {useNavigate} from "react-router-dom";
-import {getAssetUrl, getPortraitAssetUrl} from "@/components/Utils";
 import Layout from "@/pages/Layout";
+import {getAssetUrl} from "@/components/Utils";
 
 export default function HomePage() {
 

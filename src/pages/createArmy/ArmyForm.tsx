@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import InputAddComponent from "../../components/inputAddComponent";
-import type {ArmyRef, PlayerArmy, PlayerUnit, UnitRef} from "../../army.d.ts";
+import type {ArmyRef, PlayerArmy, PlayerUnit, UnitRef} from "@/army";
 import "./armyform.css";
 import {useDataStore} from "@/store/dataStore";
 import UnitModal from "./UnitModal";

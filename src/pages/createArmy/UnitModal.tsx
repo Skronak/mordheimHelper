@@ -48,7 +48,7 @@ export default function UnitModal(props: Props) {
     return (
         <div title={props.title}>
             <div className={"modal-units-select-container"}>
-                <Carousel onChange={onChangeCarousel} className={"unit-carousel"} autoPlay={false} animation={"slide"}
+                <Carousel indicators={false} onChange={onChangeCarousel} className={"unit-carousel"} autoPlay={false} animation={"slide"}
                           navButtonsAlwaysVisible={true} cycleNavigation={false} index={getDefaultIndexCarousel()}>
                     {props.data.sort((e1, e2) => e1.cost - e2.cost)
                         .map(elt => (
@@ -67,7 +67,7 @@ export default function UnitModal(props: Props) {
                 <Accordion defaultExpanded>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel3-content"
+                        aria-controls="panel1-content"
                         id="panel3-header"
                     >
                         Unit Profil {currentUnit?.name}
@@ -84,6 +84,17 @@ export default function UnitModal(props: Props) {
                                 </>
                             ))}
                         </div>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion defaultExpanded>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon/>}
+                        aria-controls="panel2-content"
+                        id="panel2-header"
+                    >
+                        Rules
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <span>Rules</span>
                         <div className={"modal-unit-container modal-unit-rules"}>
                             {currentUnit && currentUnit.rules && currentUnit.rules.map(rule =>
@@ -94,21 +105,34 @@ export default function UnitModal(props: Props) {
                 </Accordion>
             </div>
 
-            <div className={"modal-unit-container"}>
-                <div className={"modal-units-select-container"}>
-                    <div className={'weapon-bloc'}>
-                        {currentUnit && currentUnit.availableHtHWeapons.map(elt =>
-                            <div className="modal-weapon-select-container" key={elt.id}>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon/>}
+                    aria-controls="panel3-content"
+                    id="panel2-header"
+                >
+                    Equipement
+                </AccordionSummary>
+                <AccordionDetails>
+                    <div className={"modal-units-select-container"}>
+                        <div className={'weapon-bloc'}>
+                            {currentUnit && currentUnit.availableHtHWeapons.map(elt =>
+                                <div className="modal-weapon-select-container" key={elt.id}>
                                                       <span className="modal-weapon-select">
                                                         <span>{elt.name} - {elt.cost}pts</span>
                                                         <input onClick={handleToggleWeapon(elt.id)}
                                                                checked={selectedWeapons && selectedWeapons.includes(elt.id)}
                                                                type="checkbox"></input>
                                                       </span>
-                            </div>
-                        )}
+                                </div>
+                            )}
+                        </div>
                     </div>
-                </div>
+                </AccordionDetails>
+            </Accordion>
+
+            <div className={"modal-unit-container"}>
+
                 <label>Total Cost : {currentUnit ? currentUnit.cost : 0}</label>
             </div>
             <button onClick={props.onClose}>Annuler</button>
