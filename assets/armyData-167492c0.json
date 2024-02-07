@@ -3,6 +3,7 @@
     "id": 1,
     "name": "arvelander",
     "icon": "icon-human.png",
+    "background": "icon-human.png",
     "race": "Humain",
     "skills": [{
       "name": "",
@@ -92,5 +93,218 @@
         ]
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Beast Herds",
+    "icon": "beast.png",
+    "background": "beast_background.jpg",
+    "race": "Beast",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 3,
+    "name": "Daemon Legions",
+    "icon": "daemon.png",
+    "background": "daemon_background.jpg",
+    "race": "Daemon",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 4,
+    "name": "Dread Elves",
+    "icon": "dread.png",
+    "background": "dread_background.jpg",
+    "race": "Elves",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+    "id": 5,
+    "name": "Dwarven Holds",
+    "icon": "dwarven.png",
+    "background": "dwarven_background.jpg",
+    "race": "Dwarves",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },
+  {
+  "id": 6,
+  "name": "Empire of Sonnstahl",
+  "icon": "sonnstahl.png",
+    "background": "sonnastahl_background.jpg",
+  "race": "Humain",
+  "skills": [
+    {
+      "name": "",
+      "effect": ""
+    }
+  ],
+  "units": []
+  },  {
+    "id": 7,
+    "name": "Highborn Elves",
+    "icon": "highelves.png",
+    "background": "high_background.jpg",
+    "race": "Elves",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 8,
+    "name": "Infernal Dwarves",
+    "icon": "infernal.png",
+    "background": "infernal_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 9,
+    "name": "Kingdom of Equitaine",
+    "icon": "equitaine.png",
+    "background": "equitaine_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 10,
+    "name": "Ogre Khans",
+    "icon": "ogre.png",
+    "background": "ogre_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 11,
+    "name": "Orcs and Goblins",
+    "background": "orc_background.jpg",
+    "icon": "orc.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 12,
+    "name": "Saurian Ancients",
+    "icon": "saurian.png",
+    "background": "saurian_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 13,
+    "name": "Sylvan Elves",
+    "icon": "sylvan.png",
+    "background": "sylvan_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 14,
+    "name": "Undying Dynasties",
+    "icon": "undying.png",
+    "background": "undying_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 15,
+    "name": "Vampire Covenant",
+    "icon": "vampire.png",
+    "background": "vampire_background.jpg",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 16,
+    "name": "Vermin Swarm",
+    "background": "vermin_background.jpg",
+    "icon": "vermin.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
+  },  {
+    "id": 17,
+    "name": "Warriors of the Dark Gods",
+    "background": "warrior_background.jpg",
+    "icon": "warrior.png",
+    "race": "Humain",
+    "skills": [
+      {
+        "name": "",
+        "effect": ""
+      }
+    ],
+    "units": []
   }
 ]
