@@ -1,0 +1,6 @@
+.navigation-footer {
+    background-color: #2b2b2b;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+}
