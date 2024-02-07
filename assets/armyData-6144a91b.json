@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "name": "arvelander",
+    "icon": "icon-human.png",
+    "race": "Humain",
+    "skills": [{
+      "name": "",
+      "effect": ""
+    }],
+    "units": [
+        {
+          "id": 1,
+          "type": "heroes",
+          "name": "Marshal",
+          "height": "standard",
+          "icon": "1.png",
+          "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
+          "cost": 60,
+          "startingExp": 0,
+          "minLimit": 1,
+          "maxLimit": 1,
+          "profils": [
+            [
+            4,8,8,5,3,8],
+            [6,4,3,0],
+            [1,4,3,0,4,3]
+          ],
+          "skills": [1,2],
+          "armourProficiency": [1,2,3,4],
+          "weaponHthProficiency": [1,2],
+          "weaponMissileProficiency": [26],
+          "rules": [
+            {
+              "name": "Leader",
+              "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
+            }
+          ]
+        },
+      {
+        "id": 2,
+        "type": "heroes",
+        "name": "Artificer",
+        "height": "standard",
+        "icon": "2.png",
+        "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
+        "cost": 45,
+        "startingExp": 0,
+        "minLimit": 1,
+        "maxLimit": 1,
+        "profils": [
+          [4,8,7,5,3,4],
+          [6,3,3,0],
+          [1,3,3,0,3,3]
+        ],
+        "skills": [1,2],
+        "armourProficiency": [1,2,3,4],
+        "weaponHthProficiency": [1,2],
+        "weaponMissileProficiency": [26],
+        "rules": [
+          {
+            "name": "Leader",
+            "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "heroes",
+        "name": "Knight",
+        "height": "standard",
+        "icon": "3.png",
+        "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
+        "cost": 45,
+        "startingExp": 0,
+        "minLimit": 1,
+        "maxLimit": 1,
+        "profils": [
+          [4,8,7,5,3,4],
+          [6,3,3,0],
+          [1,3,3,0,3,3]
+        ],
+        "skills": [1,2],
+        "armourProficiency": [1,2,3,4],
+        "weaponHthProficiency": [1,2],
+        "weaponMissileProficiency": [26],
+        "rules": [
+          {
+            "name": "Leader",
+            "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
+          }
+        ]
+      }
+    ]
+  }
+]

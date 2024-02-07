@@ -1,0 +1,570 @@
+{
+  "weapons": {
+    "handToHand": [
+      {
+        "id": 0,
+        "name": "hand",
+        "cost": [0],
+        "brace": false,
+        "hand": 1,
+        "rule": "-1 strength",
+        "specialRules": [
+          {
+            "name": "FistFight",
+            "effect": "An enemy wounded by a fist gains a +1 bonus to his armour save, and a 6+ armour save if he normally has none"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "dagger",
+        "cost": [2],
+        "brace": false,
+        "hand": 1,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "Pointy stick",
+            "effect": "An enemy wounded by a fist gains a +1 bonus to his armour save, and a 6+ armour save if he normally has none"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mace",
+        "cost": [3],
+        "brace": false,
+        "hand": 1,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "concussion",
+            "effect": "injury roll of 2-4 is treated as stunned"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Hammer",
+        "hand": 1,
+        "cost": [3],
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "concussion",
+            "effect": "injury roll of 2-4 is treated as stunned"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Axe",
+        "hand": 1,
+        "cost": [5],
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "cuttingEdge",
+            "effect": "An axe has an extra save modifier of -1, so a model with Strength 4 using an axe has a -2 save modifier when he hits an opponent in hand-to-hand combat."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Sword",
+        "hand": 1,
+        "cost": [10],
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "parry",
+            "effect": "When opponent roll to hit, roll a D6, if the roll is highter than the highter roll of the opponent then the blow is parryed. Cannot parry enemy with double strength than your"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Morning Star",
+        "hand": 1,
+        "cost": [15],
+        "brace": false,
+        "rule": "+1 strength",
+        "specialRules": [
+          {
+            "name": "heavy",
+            "effect": "The morning star is extremely tiring to use, so its +1 Strength\nbonus applies only in the first turn of each hand-to-hand combat."
+          },
+          {
+            "name": "difficultToUse",
+            "effect": "A model with a morning star may not use a second\nweapon or buckler in his other hand because it requires all his skill to\nwield it. He may carry a shield as normal though."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Double handed weapon",
+        "cost": [15],
+        "hand": 2,
+        "brace": false,
+        "rule": "",
+        "specialRules": []
+      },
+      {
+        "id": 8,
+        "name": "Spear",
+        "cost": [10],
+        "hand": 1,
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "strikeFirst",
+            "effect": "A warrior with a\nspear strikes first in the first turn of\nhand-to-hand combat."
+          },
+          {
+            "name": "unwieldy",
+            "effect": "A warrior with a spear may\nonly use a shield or a buckler in his\nother hand. He may not use a second\nweapon."
+          },
+          {
+            "name": "cavalryBonus",
+            "effect": "If using\nthe rules for mounted\nmodels, a mounted\nwarrior armed with a\nspear receives a +1\nStrength bonus when he\ncharges. This bonus only\napplies for that turn."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Halberd",
+        "cost": [10],
+        "hand": 2,
+        "brace": false,
+        "rule": "+1 strength",
+        "specialRules": [
+          {
+            "name": "twoHanded",
+            "effect": "A model armed with a halberd\nmay not use a shield, buckler or additional\nweapon in close combat.\nIf the model has a shield he still gets a +1\nbonus to his armour save against shooting."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Staff",
+        "cost": [10],
+        "hand": 2,
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "concussion",
+            "effect": "injury roll of 2-4 is treated as stunned"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Club",
+        "cost": [10],
+        "hand": 1,
+        "brace": false,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "concussion",
+            "effect": "injury roll of 2-4 is treated as stunned"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Flail",
+        "cost": [10],
+        "hand": 2,
+        "brace": false,
+        "rule": "+2 strength",
+        "specialRules": [
+          {
+            "name": "heavy",
+            "effect": "A flail is extremely tiring to use and thus the +2\nStrength bonus applies only in the first turn of each hand-to-\nhand combat"
+          },
+          {
+            "name": "twoHanded",
+            "effect": "As a flail requires two hands to use, a\nmodel using a flail may not use a shield, buckler or\nadditional weapon in close combat. If the model has a\nshield he still gets a +1 bonus to his armour save\nagainst shooting"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Lance",
+        "hand": 1,
+        "cost": [10],
+        "brace": false,
+        "rule": "+2 strength",
+        "specialRules": [
+          {
+            "name": "cavalryWeapon",
+            "effect": "A warrior must own a warhorse to use a lance, as it can only be used\nwhilst he is on horseback."
+          },
+          {
+            "name": "cavalryBonus",
+            "effect": "If using optional rules for mounted models, a warrior armed with a lance\nreceives a +2 Strength bonus when he charges. This bonus only applies for that turn."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "DoubleHanded",
+        "cost": [10],
+        "hand": 2,
+        "brace": false,
+        "rule": "+2 strength",
+        "specialRules": [
+          {
+            "name": "twoHanded",
+            "effect": "A model armed with a double-handed weapon\nmay not use a shield, buckler or additional weapon in close\ncombat. If the model is equipped with a shield he will still get\na +1 bonus to his armour save against shooting."
+          },
+          {
+            "name": "strikeLast",
+            "effect": "Double-handed weapons are so heavy that the\nmodel using them always strikes last, even when charging."
+          }
+        ]
+      }
+    ],
+    "missileWeapons": [
+      {
+        "id": 15,
+        "name": "Crossbow",
+        "cost": [25],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 30 Strength 4",
+        "specialRules": [
+          {
+            "name": "moveOrFire",
+            "effect": "You may not move and fire a crossbow on the same turn,\nother than to pivot on the spot to face your target or to stand up."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Pistol",
+        "cost": [25],
+        "hand": 1,
+        "brace": true,
+        "rule": "Range 6 Strength 4",
+        "specialRules": [
+          {
+            "name": "1",
+            "effect": "A pistol takes a whole turn to reload, so you may only fire every\nother turn. If you have a brace of pistols (ie, two) you may fire every turn."
+          },
+          {
+            "name": "2",
+            "effect": "Pistols are even better at penetrating armour than their\nStrength value of 4 suggests. A model wounded by a pistol must take its\narmour save with a -2 modifier."
+          },
+          {
+            "name": "3",
+            "effect": "A pistol is a small, simple blackpowder weapon fired by a spring mechanism. Most\npistols are expensive, unreliable, and poorly constructed.\nMaximum Range: 6\"; Strength: 4; Special Rules: Prepare shot, Save modifier, Hand-to-hand\nSPECIAL RULES\nPrepare shot: A pistol takes a whole turn to reload, so you may only fire every\nother turn. If you have a brace of pistols (ie, two) you may fire every turn.\nSave modifier: Pistols are even better at penetrating armour than their\nStrength value of 4 suggests. A model wounded by a pistol must take its\narmour save with a -2 modifier.\nHand-to-hand: Pistols can be used in hand-to-hand combat as\nwell as for shooting. A model armed with a pistol and\nanother close combat weapon gains +1 Attack, which is\nresolved at Strength 4 with a -2 save modifier. This bonus\nattack can be used only once per combat. If you are firing a\nbrace of pistols, your model can fight with 2 Attacks in the\nfirst turn of close combat. These attacks are resolved with a\nmodel’s Weapon Skill like any normal close combat attack\nand likewise may be parried. Successful hits are\nresolved at Strength 4 and with\na -2 save modifier, regardless\nof the firer’s Strength."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Duelling pistol",
+        "cost": [25],
+        "hand": 1,
+        "brace": true,
+        "rule": "",
+        "specialRules": [
+          {
+            "name": "1",
+            "effect": "A duelling pistol is built for accuracy as a skilled duellist is able\nto hit a coin from twenty paces. All shots and close combat attacks from\na duelling pistol have a +1 bonus to hit"
+          },
+          {
+            "name": "2",
+            "effect": "A duelling pistol takes a complete turn to reload, so your\nmodel may only fire every other turn. If he has a brace of duelling\npistols he may fire every turn"
+          },
+          {
+            "name": "3",
+            "effect": "Duelling pistols are even better at penetrating armour\nthan their Strength 4 suggests. A warrior wounded by a duelling pistol\nmust make his armour save with a -2 modifier"
+          },
+          {
+            "name": "4",
+            "effect": "Duelling pistols can be used in hand-to-hand\ncombat as well as for shooting. A model armed with a duelling\npistol and another close combat weapon gains +1 Attack,\nwhich is resolved at Strength 4 with a -2 save modifier. This\nbonus attack can be used only once per combat. If you are\nfiring a brace of duelling pistols, your model can fight with 2\nAttacks in the first turn of close combat. These attacks are\nresolved with a model’s Weapon Skill like any normal close\ncombat attack and likewise may be parried. Successful hits\nare resolved at Strength 4 and with a -2 save modifier,\nregardless of the firer’s Strength."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Bow",
+        "cost": [10],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range: 24, 3 strength",
+        "specialRules": []
+      },
+      {
+        "id": 19,
+        "name": "ShortBow",
+        "cost": [10],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range: 16, 3 strength",
+        "specialRules": []
+      },
+      {
+        "id": 20,
+        "name": "Longbow",
+        "cost": [15],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 3, 3 strength",
+        "specialRules": []
+      },
+      {
+        "id": 21,
+        "name": "handgun",
+        "cost": [35],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range: 24, 4 strength",
+        "specialRules": [
+          {
+            "name": "1",
+            "effect": "A handgun takes a complete turn to reload, so you may\nonly fire it every other turn."
+          },
+          {
+            "name": "2",
+            "effect": "You may not move and fire a handgun in the same turn,\nother than to pivot on the spot to face your target or stand up."
+          },
+          {
+            "name": "3",
+            "effect": "Handguns are even better at penetrating armour than their\nStrength 4 suggests. A warrior wounded by a handgun must take its armour\nsave with a -2 modifier."
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "name": "Hunting rifle",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "",
+        "specialRules": []
+      },
+      {
+        "id": 23,
+        "name": "Elfe Bow",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 36, Strength 3",
+        "specialRules": [
+          {
+            "name": "SaveModifier",
+            "effect": "An Elf bow has a -1 save modifier on armour\nsaves against it."
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "name": "Sling",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 18, Strength 3",
+        "specialRules": [
+          {
+            "name": "fireTwiceHalfRange",
+            "effect": "A slinger may fire twice in the shooting\nphase if he does not move in the movement phase. He cannot shoot\nover half range (9\") though, if he fires twice. If the model fires twice\ntheneach shot is at -1 to hit."
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "name": "ThrowingStarKnife",
+        "cost": [200],
+        "brace": false,
+        "hand": 1,
+        "rule": "Range 6, Strength user",
+        "specialRules": [
+          {
+            "name": "thrown",
+            "effect": "Models using throwing stars or\nknives do not suffer penalties for range or moving\nas these weapons are perfectly balanced for\nthrowing. They cannot be used in close combat."
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Repeater crossBow",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 24, Strength 3",
+        "specialRules": [
+          {
+            "name": "fire twice",
+            "effect": "A model armed with a repeater crossbow may choose to fire\ntwice per turn with an extra -1 to hit penalty on both shots."
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "name": "CrossBow pistol",
+        "cost": [200],
+        "brace": false,
+        "hand": 1,
+        "rule": "Range 10, Strength 4",
+        "specialRules": [
+          {
+            "name": "shoot in hand to hand combat",
+            "effect": "A model armed with a crossbow\npistol may shoot it in the first round of a hand-to-hand combat and\nthis shot is always resolved first, before any blows are struck. This\nshot has an extra -2 to hit penalty. Use model’s Ballistic Skill to see\nwhether it hits or not. This bonus attack is in addition to any close\ncombat weapon attacks"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "name": "blunderbuss",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range Special, Strength 3",
+        "specialRules": [
+          {
+            "name": "1",
+            "effect": "When your model fires the blunderbuss, draw a\nline 16\" long and 1\" wide in any direction from the firer\n(the line must be absolutely straight). Any and all\nmodels in its path are automatically hit by a\nStrength 3 hit"
+          },
+          {
+            "name": "2",
+            "effect": "t takes a very long time to load a\nblunderbuss so it may only be fired it once per\nbattle."
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Hochland long rifle",
+        "cost": [200],
+        "hand": 1,
+        "brace": false,
+        "rule": "Range 48, Strength 4",
+        "specialRules": [
+          {
+            "name": "1",
+            "effect": "You may not move and fire a Hochland long\nrifle in the same turn, other than to pivot on the spot to face\nyour target or stand up from knocked down."
+          },
+          {
+            "name": "2",
+            "effect": "A Hochland long rifle takes a complete turn to\nreload, so you may only fire it every other turn"
+          },
+          {
+            "name": "3",
+            "effect": "A model armed with a Hochland long rifle can target\nany enemy model in sight, not just the closest one."
+          },
+          {
+            "name": "3",
+            "effect": "Hochland long rifles are even better at\npenetrating armour than their Strength 4 suggests. A warrior\nwounded by a long rifle must make his armour save with a -2\nmodifier"
+          }
+        ]
+      }
+    ]
+  },
+  "armours": [
+    {
+      "id": 1,
+      "name": "Light armor",
+      "cost": [20],
+      "hand": 0,
+      "brace": false,
+      "rule": "save 5+ ",
+      "specialRules": [
+        {
+          "name": "1",
+          "effect": "A warrior that is\narmed with both heavy armour\nand a shield suffers a -1\nMovement penalty"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Heavy armor",
+      "cost": [50],
+      "hand": 0,
+      "brace": false,
+      "rule": "Save 5+",
+      "specialRules": []
+    },
+    {
+      "id": 3,
+      "name": "Shield",
+      "cost": [5],
+      "hand": 0,
+      "brace": false,
+      "rule": "save 6+",
+      "specialRules": []
+    },
+    {
+      "id": 4,
+      "name": "Buckler",
+      "cost": [5],
+      "hand": 0,
+      "brace": false,
+      "rule": "",
+      "specialRules": [
+        {
+          "name": "1",
+          "effect": "A model equipped with a buckler may parry the first blow in each round of hand-to-hand combat. When\nhis opponent scores a hit, a model with a buckler may roll 1D6. If the score is greater than the highest to hit\nscore of his opponent, the model has parried the blow, and that attack is discarded. A model may not parry\nattacks made with double or more its own Strength – they are simply too powerful to be stopped."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Helmet",
+      "cost": [10],
+      "hand": 0,
+      "brace": false,
+      "rule": "",
+      "specialRules": [
+        {
+          "name": "1",
+          "effect": "A model that is equipped with a helmet has a special 4+ save\non a D6 against being stunned. If the save is made, treat the stunned\nresult as knocked down instead. This save is not modified by the\nopponent’s Strengt"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ithilmar armour",
+      "cost": [10],
+      "hand": 0,
+      "brace": false,
+      "rule": "save 5+",
+      "specialRules": [
+        {
+          "name": "1",
+          "effect": "not slowed if he is also armed\nwith a shield."
+        },
+        {
+          "id": 7,
+          "name": "Gromril  armour",
+          "cost": [10],
+          "brace": false,
+          "rule": "save 4+",
+          "specialRules": [
+            {
+              "name": "1",
+              "effect": "not slowed if he is also armed\nwith a shield."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "miscellaneaous": [
+    {
+      "id": 1,
+      "name": "Blinding Scroll",
+      "cost": [10],
+      "hand": 0,
+      "brace": false,
+      "rule": "",
+      "specialRules": []
+    }]
+}
