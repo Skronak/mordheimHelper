@@ -10,7 +10,7 @@ export default function HomePage() {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate('/list');
+        navigate('/mordheimHelper/list');
     };
 
     return (

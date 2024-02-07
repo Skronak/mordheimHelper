@@ -48,7 +48,7 @@ export default function UnitModal(props: Props) {
     return (
         <div title={props.title}>
             <div className={"modal-units-select-container"}>
-                <Carousel indicators={false} onChange={onChangeCarousel} className={"unit-carousel"} autoPlay={false} animation={"slide"}
+                <Carousel onChange={onChangeCarousel} className={"unit-carousel"} autoPlay={false} animation={"slide"}
                           navButtonsAlwaysVisible={true} cycleNavigation={false} index={getDefaultIndexCarousel()}>
                     {props.data.sort((e1, e2) => e1.cost - e2.cost)
                         .map(elt => (

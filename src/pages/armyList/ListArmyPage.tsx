@@ -44,7 +44,7 @@ export default function ListArmyPage() {
             <div className="player-armies">
                 {playerArmies && playerArmies.map(army => (
                     <span key={army.id} className={"user-army-row"}>
-                        <button className={"army-name btn-go"} onClick={() => navigate('/edit/' + army.id)}>
+                        <button className={"army-name btn-go"} onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>
                             <img className={'army-logo'} src={getArmyIcon(appData, army.raceId)}/>
                             <span className={'army-name'}>{army.name}</span>
                             <span className={'army-name'}>cost: {army.cost} gc</span>

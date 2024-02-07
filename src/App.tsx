@@ -10,11 +10,11 @@ const App: React.FC = () => {
         <>
             <React.Suspense fallback="Loading...">
                 <Routes>
-                    <Route path="/" element={<HomePage/>} />
-                    <Route path="/home" element={<HomePage/>} />
-                    <Route path="/list" element={<ListArmyPage/>} />
-                    <Route path="/create/:idRace" element={<ArmyPage/>} />
-                    <Route path="/edit/:idArmy" element={<ArmyPage/>} />
+                    <Route path="/mordheimHelper/" element={<HomePage/>} />
+                    <Route path="/mordheimHelper/home" element={<HomePage/>} />
+                    <Route path="/mordheimHelper/list" element={<ListArmyPage/>} />
+                    <Route path="/mordheimHelper/create/:idRace" element={<ArmyPage/>} />
+                    <Route path="/mordheimHelper/edit/:idArmy" element={<ArmyPage/>} />
                     <Route path="*" element={<Navigate to="/"/>} />
                 </Routes>
             </React.Suspense>

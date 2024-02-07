@@ -20,7 +20,7 @@ export default function ArmySelectModal(props: Props) {
         <ModalWrapper title={props.title} onClose={props.onClose}>
             <div className={"armyList"}>
                 {props.data.map(army => (
-                    <button key={army.id} className={"army-name"}  onClick={()=>navigate('/create/'+army.id)}>
+                    <button key={army.id} className={"army-name"}  onClick={()=>navigate('/mordheimHelper/create/'+army.id)}>
                         <img className={'army-logo'} src={getAssetUrl(army.icon)}/>
                         <span className={'army-name'}>{army.name}</span>
                     </button>

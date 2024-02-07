@@ -97,7 +97,7 @@ function ArmyForm(props: Props) {
     setPlayerArmies(newPlayerArmies);
     localStorage.setItem('playerArmies', JSON.stringify(newPlayerArmies));
 
-    navigate('/list');
+    navigate('/mordheimHelper/list');
   }
 
   const handleClose = () => setOpen(false);
@@ -197,7 +197,7 @@ function ArmyForm(props: Props) {
             }
           </div>
         ))}
-        <button onClick={()=>navigate('/list')}>Annuler</button>
+        <button onClick={()=>navigate('/mordheimHelper/list')}>Annuler</button>
         <button onClick={()=>saveArmy()}>Enregistrer</button>
       </div>
       </Layout>

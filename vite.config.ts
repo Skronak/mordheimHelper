@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
     plugins: [react()],
-    base: "https://skronak.github.io/mordheimHelper/",
+    base: "/mordheimHelper/",
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
