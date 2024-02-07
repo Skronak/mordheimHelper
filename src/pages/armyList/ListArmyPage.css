@@ -3,7 +3,7 @@
 
     & img{
         width: 3em;
-        height: 3em;
+        height: 2em;
     }
 }
 
@@ -12,4 +12,26 @@
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 0.2em;
+}
+
+.btn-go {
+    margin-right: 1em;
+    border-radius: 0 .7em .7em 0;
+}
+
+.icon-go {
+    width: 3em;
+    height: 2em;
+    margin: auto
+}
+
+.btn-clone {
+    margin-right: .5em;
+    border-radius: .5em;
+    background-color: #ffbe67;
+}
+.btn-delete {
+    margin-right: .5em;
+    border-radius: .5em;
+    background-color: #bd3c09;
 }

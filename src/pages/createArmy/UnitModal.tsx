@@ -13,8 +13,6 @@ interface Props {
     onEdit: (id: number, u: UnitRef, w: number[], a: number[]) => void;
     playerUnit?: PlayerUnit;
     data: UnitRef[];
-    equipmentSet1: Equipements;
-    equipmentSet2: Equipements;
 }
 
 export default function UnitModal(props: Props) {

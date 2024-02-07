@@ -3,6 +3,9 @@
     height: 3em;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
 }
 
 @media (max-width: 300px) {

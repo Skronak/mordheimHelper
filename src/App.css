@@ -4,6 +4,14 @@
     border: 0;
 }
 
+html,
+body {
+    background-color: #eaeaea;
+    font-size: 1.1rem;
+    font-family: "Quicksand", sans-serif;
+    height: 100%;
+}
+
 #root {
     width: 100%;
     height: 100%;
@@ -23,6 +31,10 @@
     min-height: 2em;
 }
 
-footer {
+.navigation-footer {
     flex-shrink: 0;
+}
+
+button {
+    background-color: #e5e2e8;
 }

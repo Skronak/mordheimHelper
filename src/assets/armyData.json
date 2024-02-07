@@ -3,6 +3,7 @@
     "id": 1,
     "name": "arvelander",
     "icon": "icon-human.png",
+    "race": "Humain",
     "skills": [{
       "name": "",
       "effect": ""

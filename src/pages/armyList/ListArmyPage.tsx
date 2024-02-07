@@ -5,6 +5,7 @@ import ArmySelectModal from "@/pages/armyList/ArmySelectModal";
 import {getArmyIcon} from "@/components/Utils";
 import {useNavigate} from "react-router-dom";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
+import Layout from "@/pages/Layout";
 
 export default function ListArmyPage() {
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ export default function ListArmyPage() {
     }
 
     return (
+      <Layout title={'WARBANDS'}>
         <div className="content-container">
             <div>Availables list : {playerArmies.length}</div>
             <button className={"army-name"} onClick={() => setShowPopup(true)}>+</button>
@@ -40,17 +42,20 @@ export default function ListArmyPage() {
             <div className="player-armies">
                 {playerArmies && playerArmies.map(army => (
                     <span key={army.id} className={"user-army-row"}>
-                        <button className={"army-name"}>
-                            <img className={'army-logo'} src={getArmyIcon(appData, army.race)}/>
+                        <button className={"army-name btn-go"} onClick={() => navigate('/edit/' + army.id)}>
+                            <img className={'army-logo'} src={getArmyIcon(appData, army.raceId)}/>
                             <span className={'army-name'}>{army.name}</span>
-                            <span> {army.cost}gc</span>
+                            <span className={'army-name'}>cost: {army.cost} gc</span>
+                            <span className={'army-name'}>Race: {army.race}</span>
+                            <span className={'army-name'}>Last update: {army.lastUpdate}</span>
+                            <img className={'icon-go'} src={'/src/assets/icons/icon_chevron.svg'}/>
                         </button>
-                        <button className={'icon-button'} onClick={() => navigate('/edit/' + army.id)}><img src={'/src/assets/icons/ico_arrow.svg'}/></button>
-                        <button className={'icon-button'} onClick={() => duplicateArmy(+army.id)}><img src={'/src/assets/icons/ico_duplicate.svg'}/></button>
-                        <button className={'icon-button'} onClick={() => deleteUserArmy(+army.id)}><img src={'/src/assets/icons/ico_delete.svg'}/></button>
+                        <button className={'icon-button btn-clone'} onClick={() => duplicateArmy(+army.id)}><img src={'/src/assets/icons/icon_clone.svg'}/></button>
+                        <button className={'icon-button btn-delete'} onClick={() => deleteUserArmy(+army.id)}><img src={'/src/assets/icons/ico_delete.svg'}/></button>
                         </span>
                 ))}
             </div>
         </div>
+      </Layout>
     );
 }

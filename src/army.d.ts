@@ -47,6 +47,7 @@ export type EquipementsData = {
 export type ArmyRef = {
     id: number,
     name: string,
+    race: string;
     icon: string,
     units: UnitRef[],
     skills: [],
@@ -93,9 +94,11 @@ export type Equipements = {
 
 export type PlayerArmy = {
     id: number;
-    race: number;
+    race: string;
+    raceId: number;
     name: string;
     cost: number;
+    lastUpdate: string;
     units: PlayerUnit[];
 }
 

@@ -1,16 +1,14 @@
 import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
 import {ArmyPage} from "@/pages/createArmy/ArmyPage";
-import Header from "./pages/Header";
 import ListArmyPage from "@/pages/armyList/ListArmyPage";
-import HomePage from "./Home";
 import "./App.css";
+import HomePage from "./pages/home/HomePage";
 
 const App: React.FC = () => {
-    const navigate = useNavigate();
     return (
         <>
-            <Header/>
+            <React.Suspense fallback="Loading...">
                 <Routes>
                     <Route path="/" element={<HomePage/>} />
                     <Route path="/home" element={<HomePage/>} />
@@ -19,9 +17,7 @@ const App: React.FC = () => {
                     <Route path="/edit/:idArmy" element={<ArmyPage/>} />
                     <Route path="*" element={<Navigate to="/"/>} />
                 </Routes>
-            <footer>
-                <h3>mordheim list builder</h3>
-            </footer>
+            </React.Suspense>
         </>
     );
 };export default App;

@@ -11,9 +11,11 @@ const initStore = () => {
     if (!data || data.length == 0) {
         localStorage.setItem('playerArmies', JSON.stringify([{
             id: 2,
-            race: 1,
+            raceId: 1,
             name: 'Knight of Azueri',
             cost: 750,
+            race: 'humain',
+            lastUpdate: '01/01/2024',
             units: [{
                 heroes: [{
                     id: 1,
