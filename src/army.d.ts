@@ -3,6 +3,7 @@ export type ArmyData = {
     id: number,
     name: string,
     icon: string,
+    background: string,
     units: UnitData[],
     skills: Rule[],
 }
@@ -49,6 +50,7 @@ export type ArmyRef = {
     name: string,
     race: string;
     icon: string,
+    background: string;
     units: UnitRef[],
     skills: [],
 }

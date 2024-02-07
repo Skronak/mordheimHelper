@@ -1,13 +1,11 @@
 .link {
   padding: 0 1.3rem;
   text-decoration:none;
-  border: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: #2b2b2b;
   line-height: 2em;
   color: white;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-left: 5px;
   cursor: pointer;
   align-self: center;
 }
@@ -34,6 +32,7 @@
 .home-button {
   background-color: #2b2b2b;
   width: 100%;
+  color: white;
 }
 
 button:hover {

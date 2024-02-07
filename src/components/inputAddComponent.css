@@ -1,16 +1,13 @@
-.NewTodoForm {
-  margin-top: 3rem;
-  display: flex;
-  flex-wrap: wrap;
+.input-add-component {
 }
 
-.NewTodoForm label {
+.input-add-component label {
   min-width: 100%;
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
 
-.NewTodoForm input {
+.input-add-component input {
   flex-grow: 1;
   border: none;
   background: #f7f1f1;
@@ -18,7 +15,7 @@
   font-size: initial;
 }
 
-.NewTodoForm button {
+.input-add-component button {
   padding: 0 1.3rem;
   border: none;
   background: #ff6666;
@@ -31,12 +28,12 @@
   transform: background 0.2s ease-out;
 }
 
-.NewTodoForm button:hover {
+.input-add-component button:hover {
   background: #ff5e5e;
 }
 
-.NewTodoForm input,
-.NewTodoForm button {
+.input-add-component input,
+.input-add-component button {
   font-family: "Quicksand", sans-serif;
   height: 3rem;
 }

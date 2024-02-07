@@ -17,9 +17,10 @@ export default function HomePage() {
           <Layout>
               <div className="home-content-container">
                   <img className={"home-logo"} src={getAssetUrl("mordheimLogo.png")}/>
-                  <button className='home-button' onClick={handleButtonClick}>ENTRER</button>
+                  <div>RULES</div>
+                  <button disabled={true} className='home-button' onClick={handleButtonClick}>Broheim</button>
+                  <button className='home-button' onClick={handleButtonClick}>9TH AGE</button>
               </div>
-              <img className={"home-footer"} src={getAssetUrl("footer.png")}/>
           </Layout>
         );
 }

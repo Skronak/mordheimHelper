@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import Row from "@/components/Row";
 import Layout from "@/pages/Layout";
+import {getAssetUrl} from "@/components/Utils";
 
 interface Props {
   armyId?: number;
@@ -150,8 +151,9 @@ function ArmyForm(props: Props) {
   }
 
   return (
-      <Layout title={playerArmy.name}>
-      <div className="content-container">
+      <Layout title="ARMY">
+      <div className="army-form-page">
+        <img className={"army-form-background"} src={armyRef ? getAssetUrl(armyRef!.background) : '#'}/>
         <InputAddComponent value={playerArmy.name} handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})} placeholder={'Warband Name'}/>
         <div className={"title-cost"}>cost: {Object.keys(playerArmy.units).flatMap(k=>playerArmy.units[k]).map(l=>l.cost).reduce((kv,v)=>kv+v,0)} points</div>
 

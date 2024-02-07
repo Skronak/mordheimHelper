@@ -10,14 +10,16 @@ body.active-modal {
 }
 
 .modal, .overlay {
-    width: 100vw;
-    height: 100vh;
-    top: 2em;
     left: 0;
     right: 0;
     bottom: 0;
     position: fixed;
     color: black;
+    padding: 5% 1em 5% 1em;
+    max-height: 90%;
+    top: 0;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .overlay {

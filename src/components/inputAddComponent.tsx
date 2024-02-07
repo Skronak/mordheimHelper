@@ -17,7 +17,7 @@ export default function InputAddComponent(props: Props) {
   }
 
   return (
-    <form className="NewTodoForm">
+    <form className="input-add-component">
       <input
         value={props.value}
         onChange={onChange}
