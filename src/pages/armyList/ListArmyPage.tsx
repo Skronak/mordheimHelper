@@ -36,7 +36,7 @@ export default function ListArmyPage() {
         <div className={'list-army-page'}>
             <div className={'add-army-container'}>
                 <div className={'add-army-label'}>Availables list : {playerArmies.length}</div>
-                <button className={'icon-button btn-plus'} onClick={() => setShowPopup(true)}><img src={'/assets/icons/icon_plus.svg'}/></button>
+                <button className={'icon-button btn-plus'} onClick={() => setShowPopup(true)}><img src={'./assets/icons/icon_plus.svg'}/></button>
             </div>
             {showPopup && (
                 <ArmySelectModal title="Selectionnez une armée" onClose={() => setShowPopup(false)} data={appData}/>)}
@@ -50,10 +50,10 @@ export default function ListArmyPage() {
                             <span className={'army-name'}>cost: {army.cost} gc</span>
                             <span className={'army-name'}>Race: {army.race}</span>
                             <span className={'army-name'}>Last update: {army.lastUpdate}</span>
-                            <img className={'icon-go'} src={'/assets/icons/icon_chevron.svg'}/>
+                            <img className={'icon-go'} src={'./assets/icons/icon_chevron.svg'}/>
                         </button>
-                        <button className={'icon-button btn-clone'} onClick={() => duplicateArmy(+army.id)}><img src={'/assets/icons/icon_clone.svg'}/></button>
-                        <button className={'icon-button btn-delete'} onClick={() => deleteUserArmy(+army.id)}><img src={'/assets/icons/ico_delete.svg'}/></button>
+                        <button className={'icon-button btn-clone'} onClick={() => duplicateArmy(+army.id)}><img src={'./assets/icons/icon_clone.svg'}/></button>
+                        <button className={'icon-button btn-delete'} onClick={() => deleteUserArmy(+army.id)}><img src={'./assets/icons/ico_delete.svg'}/></button>
                         </span>
                 ))}
             </div>
