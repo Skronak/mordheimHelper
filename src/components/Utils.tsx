@@ -1,11 +1,11 @@
 import {ArmyRef} from "@/army";
 
 export function getAssetUrl(name: string) {
-    return `/assets/${name}`;
+    return `./assets/${name}`;
 }
 
 export function getPortraitAssetUrl(name: string) {
-    return `/assets/portrait/${name}`;
+    return `./assets/portrait/${name}`;
 }
 
 
