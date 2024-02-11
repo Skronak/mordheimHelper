@@ -9,6 +9,21 @@
       "name": "",
       "effect": ""
     }],
+    "archetype": [{
+      "id": 1,
+      "name": "",
+      "minModels": 4,
+      "maxModels": 15,
+      "groups": [{
+        "id": 1,
+        "limit": 2
+      }],
+      "units": [{
+        "id": "",
+        "limit": 0,
+        "group": 1
+      }]
+    }],
     "units": [
         {
           "id": 1,
