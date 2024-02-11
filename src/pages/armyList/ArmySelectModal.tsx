@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {ArmyRef, UnitRef} from "@/army";
 import ModalWrapper from "@/components/ModalWrapper";
-import {getAssetUrl, getArmyIcon} from "@/components/Utils";
+import {getAssetUrl, getArmyIcon, getAssetUrlRoot} from "@/components/Utils";
 import './armySelectModal.css';
 import {useNavigate} from "react-router-dom";
 
@@ -21,7 +21,7 @@ export default function ArmySelectModal(props: Props) {
             <div className={"armyList"}>
                 {props.data.map(army => (
                     <button key={army.id} className={"army-name"}  onClick={()=>navigate('/mordheimHelper/create/'+army.id)}>
-                        <img className={'army-logo'} src={getAssetUrl(army.icon)}/>
+                        <img className={'army-logo'} src={getAssetUrlRoot(army.icon)}/>
                         <span className={'army-name'}>{army.name}</span>
                     </button>
                 ))}

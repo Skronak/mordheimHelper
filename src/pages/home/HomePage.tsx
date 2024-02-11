@@ -3,7 +3,7 @@ import "./HomePage.css";
 
 import {useNavigate} from "react-router-dom";
 import Layout from "@/pages/Layout";
-import {getAssetUrl} from "@/components/Utils";
+import {getAssetUrlRoot} from "@/components/Utils";
 
 export default function HomePage() {
 
@@ -16,7 +16,7 @@ export default function HomePage() {
     return (
           <Layout>
               <div className="home-content-container">
-                  <img className={"home-logo"} src={getAssetUrl("mordheimLogo.png")}/>
+                  <img className={"home-logo"} src={getAssetUrlRoot("mordheimLogo.png")}/>
                   <div>RULES</div>
                   <button disabled={true} className='home-button' onClick={handleButtonClick}>Broheim</button>
                   <button className='home-button' onClick={handleButtonClick}>9TH AGE</button>
