@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ArmyForm from "@/pages/createArmy/ArmyForm";
 import {useParams} from "react-router-dom";
-import Layout from "@/pages/Layout";
+
 
 export function ArmyPage() {
     let {idArmy} = useParams();

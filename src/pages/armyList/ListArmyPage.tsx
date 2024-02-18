@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import './ListArmyPage.css';
 import {useDataStore} from "@/store/dataStore";
 import ArmySelectModal from "@/pages/armyList/ArmySelectModal";
 import {getArmyIcon} from "@/components/Utils";
 import {useNavigate} from "react-router-dom";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import Layout from "@/pages/Layout";
+import './listArmyPage.css';
 
 export default function ListArmyPage() {
     const navigate = useNavigate();
@@ -42,6 +42,7 @@ export default function ListArmyPage() {
                 <ArmySelectModal title="Selectionnez une armée" onClose={() => setShowPopup(false)} data={appData}/>)}
 
             <div className="player-armies">
+
                 {playerArmies && playerArmies.map(army => (
                     <span key={army.id} className={"user-army-row"}>
                         <button className={"army-name btn-go"} onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>

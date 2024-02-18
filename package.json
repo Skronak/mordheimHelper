@@ -17,6 +17,8 @@
     "@emotion/styled": "~11.11.0",
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "~5.15.6",
+    "@mantine/core": "7.5.3",
+    "@mantine/hooks": "7.5.3",
     "@types/node": "~20.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
