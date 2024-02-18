@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useDataStore} from "@/store/dataStore";
+import { Accordion, AccordionItem, AccordionControl} from '@mantine/core';
 import ArmySelectModal from "@/pages/armyList/ArmySelectModal";
 import {getArmyIcon} from "@/components/Utils";
 import {useNavigate} from "react-router-dom";
@@ -42,7 +43,17 @@ export default function ListArmyPage() {
                 <ArmySelectModal title="Selectionnez une armée" onClose={() => setShowPopup(false)} data={appData}/>)}
 
             <div className="player-armies">
+                <Accordion multiple defaultValue={['item-1', 'item-2']}>
+                    <Accordion.Item value="item-1">
+                        <Accordion.Control>control-1</Accordion.Control>
+                        <Accordion.Panel>panel-1</Accordion.Panel>
+                    </Accordion.Item>
 
+                    <Accordion.Item value="item-2">
+                        <Accordion.Control>control-2</Accordion.Control>
+                        <Accordion.Panel>panel-2</Accordion.Panel>
+                    </Accordion.Item>
+                </Accordion>
                 {playerArmies && playerArmies.map(army => (
                     <span key={army.id} className={"user-army-row"}>
                         <button className={"army-name btn-go"} onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>
