@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useDataStore} from "@/store/dataStore";
 import { Accordion, AccordionItem, AccordionControl} from '@mantine/core';
-import ArmySelectModal from "@/pages/armyList/ArmySelectModal";
+import ArmySelectModal from "@/pages/armySearch/ArmySelectModal";
 import {getArmyIcon} from "@/components/Utils";
 import {useNavigate} from "react-router-dom";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";

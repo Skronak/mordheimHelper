@@ -3,7 +3,7 @@
     "id": 1,
     "name": "arvelander",
     "icon": "icon-human.png",
-    "background": "icon-human.png",
+    "background": "warrior_background.jpg",
     "race": "Humain",
     "skills": [{
       "name": "",

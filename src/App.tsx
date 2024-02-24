@@ -1,7 +1,7 @@
 import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
-import {ArmyParentPage} from "@/pages/createArmy/ArmyParentPage";
-import ListArmyPage from "@/pages/armyList/ListArmyPage";
+import {ArmyParentPage} from "@/pages/armyEdit/ArmyParentPage";
+import ListArmyPage from "@/pages/armySearch/ListArmyPage";
 import "./App.css";
 import HomePage from "./pages/home/HomePage";
 import { MantineProvider } from "@mantine/core";

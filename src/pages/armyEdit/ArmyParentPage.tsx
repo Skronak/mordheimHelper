@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import ArmyEditPage from "../../../../../src/pages/createArmy/ArmyEditPage";
+import ArmyEditPage from "@/pages/armyEdit/ArmyEditPage";
 import {useParams} from "react-router-dom";
 
 
-export function ArmyPage() {
+export function ArmyParentPage() {
     let {idArmy} = useParams();
     let {idRace} = useParams();
 
