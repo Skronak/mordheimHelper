@@ -7,6 +7,7 @@ type Props = {
   title?: string;
   readonly?: boolean;
   handleChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+  onPrevious?: () => void;
 }
 
 export default function Layout(props: Props){

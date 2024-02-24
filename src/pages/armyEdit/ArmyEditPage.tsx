@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import type {ArmyRef, PlayerArmy, PlayerUnit, UnitRef} from "@/army";
 import "./armyEditPage.css";
 import {useDataStore} from "@/store/dataStore";
-import UnitModal from "./UnitModal";
 import {useNavigate} from "react-router-dom";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import Row from "@/components/Row";
@@ -10,6 +9,7 @@ import Layout from "@/pages/Layout";
 import {getAssetUrl} from "@/components/Utils";
 import {Accordion} from "@mantine/core";
 import '@mantine/carousel/styles.css';
+import UnitPage from "@/pages/armyEdit/unitEdit/UnitPage";
 
 interface Props {
     armyId?: number;
@@ -121,18 +121,6 @@ function ArmyEditPage(props: Props) {
         }
     }
 
-    const style = {
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '80%',
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
-
     const editUnit = (idUnitRef: number, val: UnitRef, weapons: number[], armor: number[]) => {
         const updatedUnits = playerArmy.units.map(unit => {
             if (unit.id === idUnitRef) {
@@ -156,57 +144,58 @@ function ArmyEditPage(props: Props) {
     }
 
     return (
-        <Layout title={playerArmy.name ? playerArmy.name : 'default name'} readonly={false}
-                handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})}>
-            <div className="army-form-page">
-                <img className={"army-form-background"} src={armyRef ? getAssetUrl(armyRef!.background) : '#'}/>
-                <div
-                    className={"title-cost"}>cost: {Object.keys(playerArmy.units).flatMap(k => playerArmy.units[k]).map(l => l.cost).reduce((kv, v) => kv + v, 0)} points
-                </div>
+        <>
+            {armyRef && open ? (
+                <UnitPage
+                    title='Ajouter une unite'
+                    onClose={() => setOpen(false)}
+                    data={modalUnitRefs}
+                    playerUnit={selectedPlayerUnit ? selectedPlayerUnit : undefined}
+                    onEdit={editUnit}
+                    onAddUnit={addUnit}
+                />
+            ) : (
+                <Layout onPrevious={() => setOpen(false)}
+                        title={playerArmy.name ? playerArmy.name : 'default name'} readonly={false}
+                        handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})}>
 
-                {armyRef && open && (
-                    <div>
-                        <UnitModal
-                            title='Ajouter une unite'
-                            onClose={() => setOpen(false)}
-                            data={modalUnitRefs}
-                            playerUnit={selectedPlayerUnit ? selectedPlayerUnit : undefined}
-                            onEdit={editUnit}
-                            onAddUnit={addUnit}
-                        />
+                    <div className="army-form-page">
+                        <img className={"army-form-background"} src={armyRef ? getAssetUrl(armyRef!.background) : '#'}/>
+                        <div
+                            className={"title-cost"}>cost: {Object.keys(playerArmy.units).flatMap(k => playerArmy.units[k]).map(l => l.cost).reduce((kv, v) => kv + v, 0)} points
+                        </div>
+                        <Accordion multiple defaultValue={unitType}>
+                            {armyRef && unitType.map(type => (
+                                <>
+                                    <Accordion.Item value={type}>
+                                        <div className={"unit-modal-accordion-title"}>
+                                            <Accordion.Control>{type}</Accordion.Control>
+                                            <button className="button-icon" onClick={() => showModal(type)}>+</button>
+                                        </div>
+                                        <Accordion.Panel>
+                                            {playerArmy.units && playerArmy.units.filter(unit => unit.type == type).map((unit: PlayerUnit) => (
+                                                <Row
+                                                    edit={edit}
+                                                    remove={remove}
+                                                    key={unit.id}
+                                                    playerUnit={unit}
+                                                    unit={armyRef.units.filter(elt => elt.id == unit.id_unit)[0]}
+                                                />
+                                            ))
+                                            }
+                                        </Accordion.Panel>
+                                    </Accordion.Item>
+                                </>
+                            ))}
+                        </Accordion>
+
+                        <button onClick={() => navigate('/mordheimHelper/list')}>Annuler</button>
+                        <button onClick={() => saveArmy()}>Enregistrer</button>
                     </div>
-                )}
-
-                <Accordion multiple defaultValue={unitType}>
-                    {armyRef && unitType.map(type => (
-                        <>
-                            <Accordion.Item value={type}>
-                                    <div className={"unit-modal-accordion-title"}>
-                                        <Accordion.Control>{type}</Accordion.Control>
-                                        <button className="button-icon" onClick={() => showModal(type)}>+</button>
-                                    </div>
-                                    <Accordion.Panel>
-                                        {playerArmy.units && playerArmy.units.filter(unit => unit.type == type).map((unit: PlayerUnit) => (
-                                            <Row
-                                                edit={edit}
-                                                remove={remove}
-                                                key={unit.id}
-                                                playerUnit={unit}
-                                                unit={armyRef.units.filter(elt => elt.id == unit.id_unit)[0]}
-                                            />
-                                        ))
-                                        }
-                                    </Accordion.Panel>
-                            </Accordion.Item>
-                        </>
-                    ))}
-                </Accordion>
-
-
-                <button onClick={() => navigate('/mordheimHelper/list')}>Annuler</button>
-                <button onClick={() => saveArmy()}>Enregistrer</button>
-            </div>
-        </Layout>
+                </Layout>
+            )
+            }
+        </>
     )
 }
 

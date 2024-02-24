@@ -10,6 +10,7 @@ type Props = {
     title?: string;
     readonly?: boolean;
     handleChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+    onPrevious?: () => void;
 }
 
 Header.defaultProps = {
@@ -21,7 +22,7 @@ export default function Header(props: Props) {
 
     return (
         <div className={'navigation-header'}>
-          <IconButton color="primary" aria-label="delete" onClick={()=>navigate(-1)}>
+          <IconButton color="primary" aria-label="delete" onClick={props.onPrevious ? props.onPrevious : () => navigate(-1)}>
             <ArrowBackIcon />
           </IconButton>
           <InputField defaultValue={props.title} {...props}/>
