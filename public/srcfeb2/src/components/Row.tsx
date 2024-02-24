@@ -13,7 +13,7 @@ interface Props {
 export function Row(props: Props) {
 
   return (
-      props.unit && (
+      props.unit&&(
     <div className="Todo" key={props.unit.id}>
       <p>{props.unit.name}</p>
       <p>{props.unit.cost}</p>
@@ -22,9 +22,6 @@ export function Row(props: Props) {
         <button onClick={()=>props.edit(props.playerUnit)}>edit
           <i className="fas fa-trash"/>
         </button>
-          <button onClick={()=>props.remove(props.playerUnit.id)}>del
-              <i className="fas fa-trash"/>
-          </button>
 
       </div>
     </div>

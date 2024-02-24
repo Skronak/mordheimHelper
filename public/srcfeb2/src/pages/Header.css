@@ -1,0 +1,15 @@
+.navigation-header {
+    background-color: #2b2b2b;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+}
+
+@media (max-width: 300px) {
+    .navigation-header {
+        flex-direction: column;
+    }
+}

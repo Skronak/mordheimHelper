@@ -5,13 +5,15 @@ import "./armyform.css";
 import {useDataStore} from "@/store/dataStore";
 import UnitModal from "./UnitModal";
 import {useNavigate} from "react-router-dom";
-import {Modal, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import Row from "@/components/Row";
 import Layout from "@/pages/Layout";
 import {getAssetUrl} from "@/components/Utils";
-
+import {Accordion} from "@mantine/core";
+import ModalWrapper from "@/components/ModalWrapper";
+import {Carousel} from "@mantine/carousel";
+import '@mantine/carousel/styles.css';
 interface Props {
   armyId?: number;
   raceId?: number;
@@ -101,6 +103,7 @@ function ArmyForm(props: Props) {
   }
 
   const handleClose = () => setOpen(false);
+
   const showModal = (type: string) => {
     setModalUnitRefs(armyRef?.units.filter(unit=>unit.type === type));
     setOpen(true);
@@ -151,39 +154,29 @@ function ArmyForm(props: Props) {
   }
 
   return (
-      <Layout title="ARMY">
+      <Layout title={playerArmy.name ? playerArmy.name : 'default name'} readonly={false} handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})}>
       <div className="army-form-page">
         <img className={"army-form-background"} src={armyRef ? getAssetUrl(armyRef!.background) : '#'}/>
-        <InputAddComponent value={playerArmy.name} handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})} placeholder={'Warband Name'}/>
         <div className={"title-cost"}>cost: {Object.keys(playerArmy.units).flatMap(k=>playerArmy.units[k]).map(l=>l.cost).reduce((kv,v)=>kv+v,0)} points</div>
 
-        {armyRef && (
+        {armyRef && open && (
         <div>
-          <Modal
-              open={open}
-              sx={{ 'z-index': 1 }}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
               <UnitModal
                   title='Ajouter une unite'
-                  onClose={() => (handleClose)}
+                  onClose={() => setOpen(false)}
                   data={modalUnitRefs}
                   playerUnit={selectedPlayerUnit ? selectedPlayerUnit : undefined}
                   onEdit={editUnit}
                   onAddUnit={addUnit}
               />
-            </Box>
-          </Modal>
         </div>
         )}
 
         {armyRef && unitType.map(type => (
           <div key={type}>
             <h2 className={'armyRef-form-label'}>{type}
-              <button className="button-icon" onClick={() => showModal(type)}>+</button>
+              {armyRef.units.filter(unit=>unit.type==type).length >0 && (
+                <button className="button-icon" onClick={() => showModal(type)}>+</button>)}
             </h2>
             {playerArmy.units && playerArmy.units.filter(unit=>unit.type==type).map((unit: PlayerUnit) => (
               <Row
@@ -197,6 +190,7 @@ function ArmyForm(props: Props) {
             }
           </div>
         ))}
+
         <button onClick={()=>navigate('/mordheimHelper/list')}>Annuler</button>
         <button onClick={()=>saveArmy()}>Enregistrer</button>
       </div>

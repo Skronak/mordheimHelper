@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ArmyForm from "@/pages/createArmy/ArmyForm";
+import ArmyEditPage from "../../../../../src/pages/createArmy/ArmyEditPage";
 import {useParams} from "react-router-dom";
 
 
@@ -13,6 +13,6 @@ export function ArmyPage() {
     }, []);
 
     return (
-      <ArmyForm raceId={!!idRace ? +idRace : undefined} armyId={!!idArmy? +idArmy : undefined}/>
+      <ArmyEditPage raceId={!!idRace ? +idRace : undefined} armyId={!!idArmy? +idArmy : undefined}/>
     )
 }

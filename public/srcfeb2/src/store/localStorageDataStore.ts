@@ -16,7 +16,18 @@ const initStore = () => {
             cost: 750,
             race: 'humain',
             lastUpdate: '01/01/2024',
-            units: [],
+            units: [{
+                heroes: [{
+                    id: 1,
+                    weapon: [],
+                    armor: [],
+                }],
+                henchmen: [{
+                    id: 1,
+                    weapon: [],
+                    armor: [],
+                }]}
+            ]
         }]));
         data = localStorage.getItem('playerArmies');
     }
