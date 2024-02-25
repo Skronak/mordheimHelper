@@ -10,6 +10,7 @@ import {getAssetUrl} from "@/components/Utils";
 import {Accordion} from "@mantine/core";
 import '@mantine/carousel/styles.css';
 import UnitPage from "@/pages/armyEdit/unitEdit/UnitPage";
+import {capitalize} from "@mui/material";
 
 interface Props {
     armyId?: number;
@@ -169,7 +170,7 @@ function ArmyEditPage(props: Props) {
                                 <>
                                     <Accordion.Item value={type}>
                                         <div className={"unit-modal-accordion-title"}>
-                                            <Accordion.Control>{type}</Accordion.Control>
+                                            <Accordion.Control>{`${capitalize(type)} (${playerArmy.units.filter(u=>u.type==type).length})`}</Accordion.Control>
                                             <button className="button-icon" onClick={() => showModal(type)}>+</button>
                                         </div>
                                         <Accordion.Panel>
@@ -188,6 +189,7 @@ function ArmyEditPage(props: Props) {
                                 </>
                             ))}
                         </Accordion>
+
 
                         <button onClick={() => navigate('/mordheimHelper/list')}>Annuler</button>
                         <button onClick={() => saveArmy()}>Enregistrer</button>

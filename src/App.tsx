@@ -12,7 +12,7 @@ const App: React.FC = () => {
     return (
         <>
             <React.Suspense fallback="Loading...">
-                <MantineProvider>
+                <MantineProvider forceColorScheme={'dark'}>
                     <Routes>
                         <Route path="/mordheimHelper/" element={<HomePage/>} />
                         <Route path="/mordheimHelper/home" element={<HomePage/>} />

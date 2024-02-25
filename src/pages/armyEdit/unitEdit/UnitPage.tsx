@@ -82,7 +82,7 @@ export default function UnitPage(props: Props) {
                 </Accordion>
 
                 <Accordion>
-                    <Accordion.Item value="item-1">
+                    <Accordion.Item value="item-2">
                         <Accordion.Control>Rules</Accordion.Control>
                         <Accordion.Panel>
                             <div className={"modal-unit-container modal-unit-rules"}>
@@ -95,7 +95,7 @@ export default function UnitPage(props: Props) {
                 </Accordion>
 
                 <Accordion>
-                    <Accordion.Item value="item-1">
+                    <Accordion.Item value="item-3">
                         <Accordion.Control>Equipement</Accordion.Control>
                         <Accordion.Panel>
                             <div className={"modal-units-select-container"}>
