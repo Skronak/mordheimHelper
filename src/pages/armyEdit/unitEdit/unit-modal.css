@@ -2,6 +2,7 @@
     overflow-x: scroll;
     width: 100%;
     white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .unit-carousel{

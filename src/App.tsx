@@ -6,7 +6,7 @@ import "./App.css";
 import HomePage from "./pages/home/HomePage";
 import { MantineProvider } from "@mantine/core";
 import '@mantine/core/styles.css';
-import UnitPage from "@/pages/armyEdit/unitEdit/UnitPage";
+import '@mantine/carousel/styles.css';
 
 const App: React.FC = () => {
     return (
