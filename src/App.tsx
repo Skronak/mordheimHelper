@@ -7,6 +7,7 @@ import HomePage from "./pages/home/HomePage";
 import { MantineProvider } from "@mantine/core";
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
+import {ReferentielPage} from "@/pages/armyEdit/ReferentielPage";
 
 const App: React.FC = () => {
     return (
@@ -19,10 +20,13 @@ const App: React.FC = () => {
                         <Route path="/mordheimHelper/list" element={<ListArmyPage/>} />
                         <Route path="/mordheimHelper/create/:idRace" element={<ArmyParentPage/>} />
                         <Route path="/mordheimHelper/edit/:idArmy" element={<ArmyParentPage/>} />
+                        <Route path="/mordheimHelper/referentiel" element={<ReferentielPage/>} />
                         <Route path="*" element={<Navigate to="/"/>} />
                     </Routes>
                 </MantineProvider>
             </React.Suspense>
         </>
     );
-};export default App;
+};
+
+export default App;

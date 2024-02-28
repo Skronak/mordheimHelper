@@ -1,8 +1,8 @@
 {
-  "weapons": {
-    "handToHand": [
+  "weapons": [
       {
         "id": 0,
+        "type": "close",
         "name": "hand",
         "cost": [0],
         "brace": false,
@@ -18,6 +18,7 @@
       {
         "id": 1,
         "name": "dagger",
+        "type": "close",
         "cost": [2],
         "brace": false,
         "hand": 1,
@@ -32,6 +33,7 @@
       {
         "id": 2,
         "name": "Mace",
+        "type": "close",
         "cost": [3],
         "brace": false,
         "hand": 1,
@@ -46,6 +48,7 @@
       {
         "id": 3,
         "name": "Hammer",
+        "type": "close",
         "hand": 1,
         "cost": [3],
         "brace": false,
@@ -60,6 +63,7 @@
       {
         "id": 4,
         "name": "Axe",
+        "type": "close",
         "hand": 1,
         "cost": [5],
         "brace": false,
@@ -74,6 +78,7 @@
       {
         "id": 5,
         "name": "Sword",
+        "type": "close",
         "hand": 1,
         "cost": [10],
         "brace": false,
@@ -88,6 +93,7 @@
       {
         "id": 6,
         "name": "Morning Star",
+        "type": "close",
         "hand": 1,
         "cost": [15],
         "brace": false,
@@ -106,6 +112,7 @@
       {
         "id": 7,
         "name": "Double handed weapon",
+        "type": "close",
         "cost": [15],
         "hand": 2,
         "brace": false,
@@ -115,6 +122,7 @@
       {
         "id": 8,
         "name": "Spear",
+        "type": "close",
         "cost": [10],
         "hand": 1,
         "brace": false,
@@ -137,6 +145,7 @@
       {
         "id": 9,
         "name": "Halberd",
+        "type": "close",
         "cost": [10],
         "hand": 2,
         "brace": false,
@@ -151,6 +160,7 @@
       {
         "id": 10,
         "name": "Staff",
+        "type": "close",
         "cost": [10],
         "hand": 2,
         "brace": false,
@@ -165,6 +175,7 @@
       {
         "id": 11,
         "name": "Club",
+        "type": "close",
         "cost": [10],
         "hand": 1,
         "brace": false,
@@ -179,6 +190,7 @@
       {
         "id": 12,
         "name": "Flail",
+        "type": "close",
         "cost": [10],
         "hand": 2,
         "brace": false,
@@ -197,6 +209,7 @@
       {
         "id": 13,
         "name": "Lance",
+        "type": "close",
         "hand": 1,
         "cost": [10],
         "brace": false,
@@ -212,31 +225,33 @@
           }
         ]
       },
-      {
-        "id": 14,
-        "name": "DoubleHanded",
-        "cost": [10],
-        "hand": 2,
-        "brace": false,
-        "rule": "+2 strength",
-        "specialRules": [
-          {
-            "name": "twoHanded",
-            "effect": "A model armed with a double-handed weapon\nmay not use a shield, buckler or additional weapon in close\ncombat. If the model is equipped with a shield he will still get\na +1 bonus to his armour save against shooting."
-          },
-          {
-            "name": "strikeLast",
-            "effect": "Double-handed weapons are so heavy that the\nmodel using them always strikes last, even when charging."
-          }
-        ]
-      }
-    ],
-    "missileWeapons": [
+    {
+      "id": 14,
+      "name": "DoubleHanded",
+      "type": "close",
+      "cost": [
+        10
+      ],
+      "hand": 2,
+      "brace": false,
+      "rule": "+2 strength",
+      "specialRules": [
+        {
+          "name": "twoHanded",
+          "effect": "A model armed with a double-handed weapon\nmay not use a shield, buckler or additional weapon in close\ncombat. If the model is equipped with a shield he will still get\na +1 bonus to his armour save against shooting."
+        },
+        {
+          "name": "strikeLast",
+          "effect": "Double-handed weapons are so heavy that the\nmodel using them always strikes last, even when charging."
+        }
+      ]
+    },
       {
         "id": 15,
         "name": "Crossbow",
         "cost": [25],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 30 Strength 4",
         "specialRules": [
@@ -251,6 +266,7 @@
         "name": "Pistol",
         "cost": [25],
         "hand": 1,
+        "type": "missile",
         "brace": true,
         "rule": "Range 6 Strength 4",
         "specialRules": [
@@ -273,6 +289,7 @@
         "name": "Duelling pistol",
         "cost": [25],
         "hand": 1,
+        "type": "missile",
         "brace": true,
         "rule": "",
         "specialRules": [
@@ -299,6 +316,7 @@
         "name": "Bow",
         "cost": [10],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range: 24, 3 strength",
         "specialRules": []
@@ -308,6 +326,7 @@
         "name": "ShortBow",
         "cost": [10],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range: 16, 3 strength",
         "specialRules": []
@@ -317,6 +336,7 @@
         "name": "Longbow",
         "cost": [15],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 3, 3 strength",
         "specialRules": []
@@ -326,6 +346,7 @@
         "name": "handgun",
         "cost": [35],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range: 24, 4 strength",
         "specialRules": [
@@ -348,15 +369,17 @@
         "name": "Hunting rifle",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "",
         "specialRules": []
       },
       {
         "id": 23,
-        "name": "Elfe Bow",
+        "name": "Elve Bow",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 36, Strength 3",
         "specialRules": [
@@ -371,6 +394,7 @@
         "name": "Sling",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 18, Strength 3",
         "specialRules": [
@@ -386,6 +410,7 @@
         "cost": [200],
         "brace": false,
         "hand": 1,
+        "type": "missile",
         "rule": "Range 6, Strength user",
         "specialRules": [
           {
@@ -399,6 +424,7 @@
         "name": "Repeater crossBow",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 24, Strength 3",
         "specialRules": [
@@ -414,6 +440,7 @@
         "cost": [200],
         "brace": false,
         "hand": 1,
+        "type": "missile",
         "rule": "Range 10, Strength 4",
         "specialRules": [
           {
@@ -427,6 +454,7 @@
         "name": "blunderbuss",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range Special, Strength 3",
         "specialRules": [
@@ -445,6 +473,7 @@
         "name": "Hochland long rifle",
         "cost": [200],
         "hand": 1,
+        "type": "missile",
         "brace": false,
         "rule": "Range 48, Strength 4",
         "specialRules": [
@@ -466,14 +495,14 @@
           }
         ]
       }
-    ]
-  },
+    ],
   "armours": [
     {
       "id": 1,
       "name": "Light armor",
       "cost": [20],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "save 5+ ",
       "specialRules": [
@@ -488,6 +517,7 @@
       "name": "Heavy armor",
       "cost": [50],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "Save 5+",
       "specialRules": []
@@ -497,6 +527,7 @@
       "name": "Shield",
       "cost": [5],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "save 6+",
       "specialRules": []
@@ -506,6 +537,7 @@
       "name": "Buckler",
       "cost": [5],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "",
       "specialRules": [
@@ -520,6 +552,7 @@
       "name": "Helmet",
       "cost": [10],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "",
       "specialRules": [
@@ -534,17 +567,19 @@
       "name": "Ithilmar armour",
       "cost": [10],
       "hand": 0,
+      "type": "armour",
       "brace": false,
       "rule": "save 5+",
       "specialRules": [
         {
           "name": "1",
-          "effect": "not slowed if he is also armed\nwith a shield."
+          "effect": "not slowed if he is also armed with a shield."
         },
         {
           "id": 7,
           "name": "Gromril  armour",
           "cost": [10],
+          "type": "armour",
           "brace": false,
           "rule": "save 4+",
           "specialRules": [
@@ -562,6 +597,7 @@
       "id": 1,
       "name": "Blinding Scroll",
       "cost": [10],
+      "type": "miscellaneaous",
       "hand": 0,
       "brace": false,
       "rule": "",

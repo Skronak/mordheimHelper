@@ -2,6 +2,7 @@
 export type ArmyData = {
     id: number,
     name: string,
+    race: string,
     icon: string,
     background: string,
     units: UnitData[],
@@ -23,6 +24,7 @@ export type UnitData = {
     armourProficiency: number[],
     weaponHthProficiency: number[],
     weaponMissileProficiency: number[],
+    miscellaneaousProficiency: number[],
     rules: Rule[]
 }
 
@@ -30,6 +32,7 @@ export type EquipementData = {
     id: number,
     name: string,
     cost: number[], // match index with id army-1
+    type: string,
     brace: boolean,
     hand: number,
     rule: string,
@@ -37,10 +40,7 @@ export type EquipementData = {
 }
 
 export type EquipementsData = {
-    weapons: {
-        handToHand: EquipementData[],
-        missileWeapons: EquipementData[],
-    },
+    weapons: EquipementData[],
     armours: EquipementData[],
     miscellaneaous: EquipementData[]
 }
@@ -53,6 +53,7 @@ export type ArmyRef = {
     background: string;
     units: UnitRef[],
     skills: [],
+    equipements: Equipement[]
 }
 
 export type UnitRef = {
@@ -66,9 +67,9 @@ export type UnitRef = {
     minLimit: number,
     maxLimit: number,
     profils: number[][],
-    availableArmors: Equipement[],
-    availableHtHWeapons: Equipement[],
-    availableMissileWeapons: Equipement[],
+    weaponProfiency: Equipement[],
+    armoursProficiency: Equipement[],
+    miscellaneaousProficiency: Equipement[],
     rules: Rule[]
 }
 
@@ -81,7 +82,8 @@ export type Rule = {
 export type Equipement = {
     id: number,
     name: string,
-    cost: number,
+    type: string,
+    cost: number[],
     hand: number,
     brace: boolean,
     rule: string,
@@ -110,4 +112,6 @@ export type PlayerUnit = {
     type: string;
     weapon: number[];
     armor: number[];
+    miscellaneaous: number[];
+    //proficiency
 }

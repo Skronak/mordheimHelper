@@ -5,7 +5,7 @@ export default function Footer() {
         <div className={'navigation-footer'}>
             <NavLink to="/mordheimHelper/home" className={({ isActive }) => isActive? "link link-active":"link"}>Accueil</NavLink>
             <NavLink to="/mordheimHelper/list" className={({ isActive }) => isActive? "link link-active":"link"}>Listes</NavLink>
-            <NavLink to="/mordheimHelper/list" className={"link"}>Referentiel</NavLink>
+            <NavLink to="/mordheimHelper/referentiel" className={"link"}>Referentiel</NavLink>
         </div>
     )
 }

@@ -46,6 +46,7 @@
           "armourProficiency": [1,2,3,4],
           "weaponHthProficiency": [1,2],
           "weaponMissileProficiency": [26],
+          "miscellaneaousProficiency": [],
           "rules": [
             {
               "name": "Leader",
@@ -73,6 +74,7 @@
         "armourProficiency": [1,2,3,4],
         "weaponHthProficiency": [1,2],
         "weaponMissileProficiency": [26],
+        "miscellaneaousProficiency": [],
         "rules": [
           {
             "name": "Leader",
@@ -100,6 +102,7 @@
         "armourProficiency": [1,2,3,4],
         "weaponHthProficiency": [1,2],
         "weaponMissileProficiency": [26],
+        "miscellaneaousProficiency": [],
         "rules": [
           {
             "name": "Leader",

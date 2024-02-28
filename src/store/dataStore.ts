@@ -1,15 +1,18 @@
 import {create} from 'zustand'
-import data from "@/assets/armyData.json";
-import items from "@/assets/equipmentData.json";
-import {ArmyRef, ArmyData, EquipementsData, UnitData, Rule} from "@/army";
+import armyData from "@/assets/armyData.json";
+import equipData from "@/assets/equipmentData.json";
+import {ArmyRef, ArmyData, Equipements, EquipementsData} from "@/army";
 
 type DataStoreType = {
   appData: ArmyRef[];
   setAppData: (data: ArmyRef[]) => void;
+  equipementData: EquipementsData;
+  setEquipementData: (data: Equipements) => void;
 }
-const transformArmyDataToArmy = (data: ArmyData[], items: EquipementsData): ArmyRef[] => {
 
-    return data.map(army => {
+const transformArmyDataToArmy = (armyData: ArmyData[]): ArmyRef[] => {
+
+    return armyData.map(army => {
         return {
             ...army,
             units: army.units.map((unit) => {
@@ -26,27 +29,9 @@ const transformArmyDataToArmy = (data: ArmyData[], items: EquipementsData): Army
                     profils: unit.profils,
                     skills: unit.skills,
                     rules: unit.rules,
-                    availableArmors: unit.armourProficiency.map(armourId => {
-                        let item = items.armours.filter(item => item.id == armourId)[0];
-                        return {
-                            ...item,
-                            cost: item.cost[army.id-1],
-                        }
-                    }),
-                    availableHtHWeapons: unit.weaponHthProficiency.map(weaponId => {
-                        let item = items.weapons.handToHand.filter(item => item.id == weaponId)[0];
-                        return {
-                            ...item,
-                            cost: item.cost[army.id-1],
-                        }
-                    }),
-                    availableMissileWeapons: unit.weaponMissileProficiency.map(weaponId => {
-                        let item = items.weapons.missileWeapons.filter(item => item.id == weaponId)[0];
-                        return {
-                            ...item,
-                            cost: item.cost[army.id-1],
-                        }
-                    }),
+                    weaponProfiency:unit.weaponHthProficiency.concat(unit.weaponMissileProficiency),
+                    armoursProficiency: unit.armourProficiency,
+                    miscellaneaousProficiency: [],
                 }
             })
         }
@@ -54,6 +39,8 @@ const transformArmyDataToArmy = (data: ArmyData[], items: EquipementsData): Army
 }
 
 export const useDataStore = create<DataStoreType>((set) => ({
-    appData: transformArmyDataToArmy(data, items),
+    appData: transformArmyDataToArmy(armyData),
+    equipementData: equipData,
     setAppData: (newData: ArmyRef[]) => set({appData: newData}),
+    setEquipementData: (newData: Equipements) => set({equipementData: newData}),
 }));
