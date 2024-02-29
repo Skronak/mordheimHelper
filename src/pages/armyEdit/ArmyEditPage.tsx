@@ -189,10 +189,10 @@ function ArmyEditPage(props: Props) {
                                 </>
                             ))}
                         </Accordion>
-
-
-                        <button onClick={() => navigate('/mordheimHelper/list')}>Annuler</button>
-                        <button onClick={() => saveArmy()}>Enregistrer</button>
+                        <div className="button-group">
+                            <button className="button-style" onClick={() => navigate('/mordheimHelper/list')}>Annuler</button>
+                            <button className="button-style" onClick={() => saveArmy()}>Enregistrer</button>
+                        </div>
                     </div>
                 </Layout>
             )

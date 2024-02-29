@@ -47,10 +47,10 @@ export default function ListArmyPage() {
                     <span key={army.id} className={"user-army-row"}>
                         <button className={"army-name btn-go"} onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>
                             <img className={'army-logo'} src={getArmyIcon(appData, army.raceId)}/>
-                            <span className={'army-name'}>{army.name}</span>
-                            <span className={'army-name'}>cost: {army.cost} gc</span>
-                            <span className={'army-name'}>Race: {army.race}</span>
-                            <span className={'army-name'}>Last update: {army.lastUpdate}</span>
+                            <span className={'army-name army-title'}>{army.name}</span>
+                            <span className={'army-name army-cost'}>cost: {army.cost} gc</span>
+                            <span className={'army-name army-race'}>Race: {army.race}</span>
+                            <span className={'army-name army-last-update'}>Last update: {army.lastUpdate}</span>
                             <img className={'icon-go'} src={'./assets/icons/icon_chevron.svg'}/>
                         </button>
                         <button className={'icon-button btn-clone'} onClick={() => duplicateArmy(+army.id)}><img src={'./assets/icons/icon_clone.svg'}/></button>

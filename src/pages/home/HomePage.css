@@ -10,9 +10,9 @@
   align-self: center;
 }
 
-@media (max-width: 300px) {
-  .link {
-    align-self: auto;
+@media screen and (max-width: 780px) {
+  .army-name {
+    display: none;
   }
 }
 

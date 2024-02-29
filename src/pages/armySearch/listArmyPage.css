@@ -15,9 +15,17 @@
     padding-bottom: .2em
 }
 
+@media screen and (max-width: 600px) {
+    div.example {
+        display: none;
+    }
+}
+
 .list-army-page .btn-go {
     margin-right: 1em;
-    border-radius: 0 .7em .7em 0
+    border-radius: 0 .7em .7em 0;
+    background-color: white;
+    color: black;
 }
 
 .list-army-page .icon-go {

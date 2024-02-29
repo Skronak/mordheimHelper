@@ -11,7 +11,7 @@ interface Props {
   data: UnitRef[];
 }
 
-export default function UnitModal(props: Props) {
+export default function EquipementModal(props: Props) {
   const [currentUnit, setCurrentUnit] = useState<UnitRef>();
   const [availableWeapons, setAvailableWeapons] = useState<Equipement[]>([]);
   const [availableArmors, setAvailableArmors] = useState<Equipement[]>([]);

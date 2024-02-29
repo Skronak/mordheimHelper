@@ -47,9 +47,17 @@
 .modal-unit-container {
     border-top: 1px solid;
     margin-bottom: 1em;
-    background-color: lightgray;
+    background-color: #242424;
+    color: white;
 }
 
 .modal-unit-profil-table {
     width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+.button-style-center {
+    margin: 0 auto;
+    display: block;
 }

@@ -6,7 +6,9 @@ import Layout from "@/pages/Layout";
 import {Carousel} from '@mantine/carousel';
 import {UnitCard} from "@/pages/armyEdit/unitEdit/UnitCard";
 import {Accordion} from "@mantine/core";
-import UnitModal from "@/pages/armyEdit/UnitModal";
+import EquipementModal from "@/pages/armyEdit/EquipementModal";
+import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
+import {useDataStore} from "@/store/dataStore";
 
 interface Props {
     title: string;
@@ -19,13 +21,12 @@ interface Props {
 
 export default function UnitPage(props: Props) {
     const [currentUnit, setCurrentUnit] = useState<UnitRef>();
-    const [availableWeapons, setAvailableWeapons] = useState<Equipement[]>([]);
-    const [availableArmors, setAvailableArmors] = useState<Equipement[]>([]);
     const [selectedWeapons, setSelectedWeapons] = useState<number[]>([]);
     const [selectedArmors, setSelectedArmors] = useState<number[]>([]);
     const profilsLabel = ["Global", "Defensive", "Offensive"];
     const profilsHeader = [["Adv", "Mar", "Dis", "Rat", "Upk", "Lvl"], ["HP", "Def", "Res", "Arm"], ["Att", "Off", "Str", "AP", "Agi", "Aim"]];
     const [equipementModalOpen, setEquipementModalOpen] = useState<boolean>();
+    const {equipementData, setEquipementData} = useDataStore();
 
     useEffect(() => {
         setCurrentUnit(props.playerUnit ? (props.data.filter(unit => unit.id === props.playerUnit!.id_unit)[0]) : props.data[0]);
@@ -43,8 +44,19 @@ export default function UnitPage(props: Props) {
     const onChangeCarousel = (index: number) => {
         setCurrentUnit(props.data[index]);
     }
-    const getDefaultIndexCarousel = () => {
-        return props.playerUnit ? props.data.map(elt => elt.id).indexOf(props.playerUnit.id_unit) : 0;
+
+    const getEquipement = (index: number, type: string) => {
+        switch (type) {
+            case 'weapon':
+                const weap = equipementData.weapons.find(e => e.id === index)
+                return weap !== undefined ? <div>{weap.name}</div> : <div></div>;
+            case 'armour':
+                const armor = equipementData.armours.find(e => e.id === index);
+                return armor !== undefined ? <div>{armor.name}</div> : <div></div>;
+            case 'miscellaneaous':
+                const misce = equipementData.miscellaneaous.find(e => e.id === index);
+                return misce !== undefined ? <div>{misce.name}</div> : <div></div>;
+        }
     }
 
     return (
@@ -102,6 +114,12 @@ export default function UnitPage(props: Props) {
                         <Accordion.Panel>
                             <div className={"modal-units-select-container"}>
                                 <div className={'weapon-bloc'}>
+                                        <button className="button-style button-style-center">+</button>
+                                    {selectedWeapons.map(idx=> (
+                                                <div>{getEquipement(idx, 'weapon')}</div>
+                                        )
+                                    )}
+
                                     {/*{currentUnit && currentUnit.availableHtHWeapons.map(elt =>*/}
                                     {/*    <div className="modal-weapon-select-container" key={elt.id}>*/}
                                     {/*                  <span className="modal-weapon-select">*/}
@@ -117,37 +135,18 @@ export default function UnitPage(props: Props) {
                         </Accordion.Panel>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion defaultValue={"item-3"}>
-                    <Accordion.Item value="item-3">
-                        <Accordion.Control>Equipement</Accordion.Control>
-                        <Accordion.Panel>
-                            <div className={"modal-units-select-container"}>
-                                <div className={'weapon-bloc'}>
-                                    {/*{currentUnit && currentUnit.availableHtHWeapons.map(elt =>*/}
-                                    {/*  <div className="modal-weapon-select-container" key={elt.id}>*/}
-                                    {/*                  <span className="modal-weapon-select">*/}
-                                    {/*                    <span>{elt.name} - {elt.cost}pts</span>*/}
-                                    {/*                    <input onClick={handleToggleWeapon(elt.id)}*/}
-                                    {/*                           checked={selectedWeapons && selectedWeapons.includes(elt.id)}*/}
-                                    {/*                           type="checkbox"></input>*/}
-                                    {/*                  </span>*/}
-                                    {/*  </div>*/}
-                                    {/*)}*/}
-                                </div>9
-                            </div>
-                        </Accordion.Panel>
-                    </Accordion.Item>
-                </Accordion>
                 <div className={"modal-unit-container"}>
                     <label>Total Cost : {currentUnit ? currentUnit.cost : 0}</label>
                 </div>
-                <button onClick={props.onClose}>Annuler</button>
-                <button
-                    onClick={() => props.playerUnit ? props.onEdit(props.playerUnit.id, currentUnit!, selectedWeapons, selectedArmors) : props.onAddUnit(currentUnit!, selectedWeapons, selectedArmors)}>Enregistrer
-                </button>
+                <div className="button-group">
+                    <button className="button-style" onClick={props.onClose}>Annuler</button>
+                    <button className="button-style"
+                        onClick={() => props.playerUnit ? props.onEdit(props.playerUnit.id, currentUnit!, selectedWeapons, selectedArmors) : props.onAddUnit(currentUnit!, selectedWeapons, selectedArmors)}>Enregistrer
+                    </button>
+                </div>
             </div>
 
-            {equipementModalOpen && <UnitModal title={'weapons'} onClose={()=>setEquipementModalOpen(false)} onValidate={()=>null} data={props.data} playerUnit={props.playerUnit}/>}
+            {equipementModalOpen && <EquipementModal title={'weapons'} onClose={()=>setEquipementModalOpen(false)} onValidate={()=>null} data={props.data} playerUnit={props.playerUnit}/>}
 
         </Layout>
     )
