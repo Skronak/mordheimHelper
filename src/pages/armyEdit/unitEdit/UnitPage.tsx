@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Equipement, PlayerUnit, UnitRef} from "@/army";
+import {ArmyRef, Equipement, PlayerUnit, UnitRef} from "@/army";
 import {getPortraitAssetUrl} from "@/components/Utils";
 import "./unit-modal.css";
 import Layout from "@/pages/Layout";
@@ -7,7 +7,6 @@ import {Carousel} from '@mantine/carousel';
 import {UnitCard} from "@/pages/armyEdit/unitEdit/UnitCard";
 import {Accordion} from "@mantine/core";
 import EquipementModal from "@/pages/armyEdit/EquipementModal";
-import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import {useDataStore} from "@/store/dataStore";
 
 interface Props {
@@ -17,6 +16,7 @@ interface Props {
     onEdit: (id: number, u: UnitRef, w: number[], a: number[]) => void;
     playerUnit?: PlayerUnit;
     data: UnitRef[];
+    armyRef: ArmyRef;
 }
 
 export default function UnitPage(props: Props) {
@@ -59,12 +59,26 @@ export default function UnitPage(props: Props) {
         }
     }
 
+    const getProficiency = (idx: number[], type: string) => {
+        switch (type) {
+            case 'weapon':
+                let weap = equipementData.weapons.filter(eq => idx.includes(eq.id)).map(eq => eq.name);
+                return weap !== undefined ? <div>{weap.join(', ')}</div> : <div></div>;
+            case 'armour':
+                let armor = equipementData.armours.filter(eq => idx.includes(eq.id)).map(eq => eq.name);
+                return armor !== undefined ? <div>{armor.join(', ')}</div> : <div></div>;
+            case 'miscellaneaous':
+                let misc = equipementData.miscellaneaous.filter(eq => idx.includes(eq.id)).map(eq => eq.name);
+                return misc !== undefined ? <div>{misc.join(',')}</div> : <div></div>;
+        }
+    }
+
     return (
         <Layout onPrevious={props.onClose} title={'UNIT'} readonly={true}>
             <div className={"modal-units-select-container"}>
                 <Carousel onSlideChange={onChangeCarousel} withIndicators={true} height={200}
                           className={"unit-carousel"}>
-                    {props.data.sort((e1, e2) => e1.cost - e2.cost)
+                    {props.data.sort((e1, e2) => e2.cost - e1.cost)
                         .map(elt => (
                                 <Carousel.Slide>
                                     <UnitCard image={getPortraitAssetUrl(elt.icon)}
@@ -76,7 +90,7 @@ export default function UnitPage(props: Props) {
             </div>
 
             <div>
-                <Accordion defaultValue={"item-1"}>
+                <Accordion multiple defaultValue={["item-1","item-2","item-3","item-4"]}>
                     <Accordion.Item value="item-1">
                         <Accordion.Control>Unit Profil {currentUnit?.name}</Accordion.Control>
                         <Accordion.Panel>
@@ -93,10 +107,17 @@ export default function UnitPage(props: Props) {
                             </div>
                         </Accordion.Panel>
                     </Accordion.Item>
-                </Accordion>
-
-                <Accordion defaultValue={"item-2"}>
                     <Accordion.Item value="item-2">
+                        <Accordion.Control>Proficency</Accordion.Control>
+                        <Accordion.Panel>
+                            <div className={"modal-unit-container"}>
+                                    <div> Weapons: {currentUnit && getProficiency(currentUnit!.weaponProfiency, 'weapon')}</div>
+                                    <div> Armours: {currentUnit && getProficiency(currentUnit!.weaponProfiency, 'armour')}</div>
+                            </div>
+                        </Accordion.Panel>
+                    </Accordion.Item>
+
+                    <Accordion.Item value="item-3">
                         <Accordion.Control>Rules</Accordion.Control>
                         <Accordion.Panel>
                             <div className={"modal-unit-container modal-unit-rules"}>
@@ -106,15 +127,13 @@ export default function UnitPage(props: Props) {
                             </div>
                         </Accordion.Panel>
                     </Accordion.Item>
-                </Accordion>
 
-                <Accordion defaultValue={"item-3"}>
-                    <Accordion.Item value="item-3">
+                    <Accordion.Item value="item-4">
                         <Accordion.Control>Equipement</Accordion.Control>
                         <Accordion.Panel>
                             <div className={"modal-units-select-container"}>
                                 <div className={'weapon-bloc'}>
-                                        <button className="button-style button-style-center">+</button>
+                                        <button className="button-style button-style-center" onClick={()=>setEquipementModalOpen(true)}>+</button>
                                     {selectedWeapons.map(idx=> (
                                                 <div>{getEquipement(idx, 'weapon')}</div>
                                         )
@@ -146,7 +165,7 @@ export default function UnitPage(props: Props) {
                 </div>
             </div>
 
-            {equipementModalOpen && <EquipementModal title={'weapons'} onClose={()=>setEquipementModalOpen(false)} onValidate={()=>null} data={props.data} playerUnit={props.playerUnit}/>}
+            {equipementModalOpen && <EquipementModal armyRef={props.armyRef} type={'weapons'} onClose={()=>setEquipementModalOpen(false)} onValidate={()=>null} data={props.data} playerUnit={props.playerUnit}/>}
 
         </Layout>
     )

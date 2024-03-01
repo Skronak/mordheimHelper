@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "arvelander",
-    "icon": "icon-human.png",
-    "background": "warrior_background.jpg",
+    "name": "Empire of Sonnstahl",
+    "icon": "sonnstahl.png",
+    "background": "sonnhalt_background.jpg",
     "race": "Humain",
     "skills": [{
       "name": "",
@@ -11,17 +11,20 @@
     }],
     "archetype": [{
       "id": 1,
-      "name": "",
+      "name": "League of Cogs",
+      "Rule": ["Start the campaign with an additional 100 pts (normally 600 pts).",
+        "Sergeants and Youngbloods gain Weapon Proficiency for Crossbows, Bows and Longbows."],
       "minModels": 4,
       "maxModels": 15,
       "groups": [{
         "id": 1,
-        "limit": 2
+        "min": 0,
+        "max": 2
       }],
       "units": [{
-        "id": "",
-        "limit": 0,
-        "group": 1
+        "id": 1,
+        "limit": 1,
+        "group": null
       }]
     }],
     "units": [
@@ -30,7 +33,7 @@
           "type": "heroes",
           "name": "Marshal",
           "height": "standard",
-          "icon": "1.png",
+          "icon": "5.png",
           "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
           "cost": 60,
           "startingExp": 0,
@@ -47,12 +50,7 @@
           "weaponHthProficiency": [1,2],
           "weaponMissileProficiency": [26],
           "miscellaneaousProficiency": [],
-          "rules": [
-            {
-              "name": "Leader",
-              "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
-            }
-          ]
+          "rules": []
         },
       {
         "id": 2,
@@ -61,7 +59,7 @@
         "height": "standard",
         "icon": "2.png",
         "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
-        "cost": 45,
+        "cost": 50,
         "startingExp": 0,
         "minLimit": 1,
         "maxLimit": 1,
@@ -71,24 +69,19 @@
           [1,3,3,0,3,3]
         ],
         "skills": [1,2],
-        "armourProficiency": [1,2,3,4],
-        "weaponHthProficiency": [1,2],
+        "armourProficiency": [1,2,3,5],
+        "weaponHthProficiency": [1,3,4],
         "weaponMissileProficiency": [26],
         "miscellaneaousProficiency": [],
-        "rules": [
-          {
-            "name": "Leader",
-            "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
-          }
-        ]
+        "rules": []
       },
       {
         "id": 3,
         "type": "heroes",
-        "name": "Knight",
+        "name": "Wizard",
         "height": "standard",
-        "icon": "3.png",
-        "description": "The Captain of a mercenary warband is\ntypically a middleaged veteran soldier of the\nImperial army, most likely he was a sergeant\nor other petty officer. The survival of a\nmercenary warband relies more on the wit\nand experience of its captain, than on how\ngood a fighter he is. It’s all too common that\nan inexperienced captain will lead his men\ninto an ambush, or lead them on a long\njourney with no food or supplies. Being a\nsuccessful captain means that your men will\nfollow you to hell and back, and plenty of\ngold crowns and feasting. A captain that fails\nin his duty to keep his men alive and well fed\nwill at best find himself deserted and worst\nend up with a knife in his back.",
+        "icon": "1.png",
+        "description": "Spooky !",
         "cost": 45,
         "startingExp": 0,
         "minLimit": 1,
@@ -96,19 +89,58 @@
         "profils": [
           [4,8,7,5,3,4],
           [6,3,3,0],
-          [1,3,3,0,3,3]
+          [1,3,3,0,3,0]
+        ],
+        "skills": [1,2],
+        "armourProficiency": [2,3],
+        "weaponHthProficiency": [1],
+        "weaponMissileProficiency": [26],
+        "miscellaneaousProficiency": [],
+        "rules": []
+      }, {
+        "id": 4,
+        "type": "heroes",
+        "name": "Inquisitor",
+        "height": "standard",
+        "icon": "4.png",
+        "description": "",
+        "cost": 60,
+        "startingExp": 0,
+        "minLimit": 1,
+        "maxLimit": 1,
+        "profils": [
+          [4,8,8,5,3,8],
+          [6,4,3,0],
+          [1,4,3,0,4,2]
         ],
         "skills": [1,2],
         "armourProficiency": [1,2,3,4],
         "weaponHthProficiency": [1,2],
         "weaponMissileProficiency": [26],
         "miscellaneaousProficiency": [],
-        "rules": [
-          {
-            "name": "Leader",
-            "effect": "Any Warrior within 6 may use his Leadership when taking Ld tests"
-          }
-        ]
+        "rules": []
+      }, {
+        "id": 5,
+        "type": "heroes",
+        "name": "Prelate",
+        "height": "standard",
+        "icon": "3.png",
+        "description": "",
+        "cost": 40,
+        "startingExp": 0,
+        "minLimit": 1,
+        "maxLimit": 1,
+        "profils": [
+          [4,8,8,5,3,8],
+          [6,4,3,0],
+          [1,4,3,0,4,2]
+        ],
+        "skills": [1,2],
+        "armourProficiency": [1,2,3,4],
+        "weaponHthProficiency": [1,2],
+        "weaponMissileProficiency": [26],
+        "miscellaneaousProficiency": [],
+        "rules": []
       }
     ]
   },
@@ -169,19 +201,6 @@
     "units": []
   },
   {
-  "id": 6,
-  "name": "Empire of Sonnstahl",
-  "icon": "sonnstahl.png",
-    "background": "sonnastahl_background.jpg",
-  "race": "Humain",
-  "skills": [
-    {
-      "name": "",
-      "effect": ""
-    }
-  ],
-  "units": []
-  },  {
     "id": 7,
     "name": "Highborn Elves",
     "icon": "highelves.png",

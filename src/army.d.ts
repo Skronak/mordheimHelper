@@ -67,9 +67,9 @@ export type UnitRef = {
     minLimit: number,
     maxLimit: number,
     profils: number[][],
-    weaponProfiency: Equipement[],
-    armoursProficiency: Equipement[],
-    miscellaneaousProficiency: Equipement[],
+    weaponProfiency: number[],
+    armoursProficiency: number[],
+    miscellaneaousProficiency: number[],
     rules: Rule[]
 }
 

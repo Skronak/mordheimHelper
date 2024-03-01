@@ -1,0 +1,10 @@
+.modal-equipement-modal-table {
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.equipement-modal-checkbox-cell {
+    width: 3em;
+    text-align: center;
+}

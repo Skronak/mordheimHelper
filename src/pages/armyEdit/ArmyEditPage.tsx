@@ -154,6 +154,7 @@ function ArmyEditPage(props: Props) {
                     playerUnit={selectedPlayerUnit ? selectedPlayerUnit : undefined}
                     onEdit={editUnit}
                     onAddUnit={addUnit}
+                    armyRef={armyRef}
                 />
             ) : (
                 <Layout onPrevious={() => setOpen(false)}

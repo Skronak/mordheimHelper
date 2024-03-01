@@ -5,6 +5,8 @@ import {UnitRef} from "@/army";
 interface Props extends PropsWithChildren {
     onClose: () => void;
     title?: string;
+    withButtons?: boolean;
+    onValidate: () => void;
 }
 //https://codepen.io/chriscoyier/pen/MeJWoM
 export default function ModalWrapper(props: Props) {
@@ -21,6 +23,12 @@ export default function ModalWrapper(props: Props) {
                     <div className="modal-body">
                         {props.children}
                     </div>
+                    {props.withButtons ? (
+                        <div className="button-group">
+                            <button className="button-style" onClick={props.onClose}>Annuler</button>
+                            <button className="button-style" onClick={props.onValidate}>Enregistrer</button>
+                        </div>
+                        ) : null}
                 </div>
             </div>
         </div>
