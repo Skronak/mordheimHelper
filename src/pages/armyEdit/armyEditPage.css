@@ -65,8 +65,11 @@
 }
 
 .army-form-background {
+    max-width: 500px;
     width: 100%;
     height: 10em;
+    margin: 0 auto;
+    display: block;
 }
 
 .unit-modal-accordion-title {

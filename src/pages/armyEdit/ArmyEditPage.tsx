@@ -19,7 +19,7 @@ interface Props {
 
 const defaultPlayerArmy = {
     id: 0,
-    name: "",
+    name: "default name",
     race: "",
     raceId: 0,
     lastUpdate: "",
@@ -72,9 +72,11 @@ function ArmyEditPage(props: Props) {
             id: 0,
             race: '',
             background: '',
+            color: '',
             name: 'DATA NOT FOUND',
             icon: 'string',
             units: [],
+            equipements: [],
             skills: []
         };
     }
@@ -118,7 +120,8 @@ function ArmyEditPage(props: Props) {
             id_unit: unit.id,
             type: unit.type,
             weapon: weapons,
-            armor: armor
+            armor: armor,
+            miscellaneaous: [],
         }
     }
 
@@ -158,7 +161,7 @@ function ArmyEditPage(props: Props) {
                 />
             ) : (
                 <Layout onPrevious={() => setOpen(false)}
-                        title={playerArmy.name ? playerArmy.name : 'default name'} readonly={false}
+                        title={playerArmy.name} readonly={false}
                         handleChange={(evt) => setPlayerArmy({...playerArmy, name: evt.target.value})}>
 
                     <div className="army-form-page">

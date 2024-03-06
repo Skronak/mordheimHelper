@@ -4,6 +4,7 @@
     "name": "Empire of Sonnstahl",
     "icon": "sonnstahl.png",
     "background": "sonnhalt_background.jpg",
+    "color": "#df8c1d",
     "race": "Humain",
     "skills": [{
       "name": "",
@@ -150,6 +151,7 @@
     "icon": "beast.png",
     "background": "beast_background.jpg",
     "race": "Beast",
+    "color": "#4d3516",
     "skills": [
       {
         "name": "",
@@ -163,6 +165,7 @@
     "name": "Daemon Legions",
     "icon": "daemon.png",
     "background": "daemon_background.jpg",
+    "color": "#b91e92",
     "race": "Daemon",
     "skills": [
       {
@@ -176,6 +179,7 @@
     "id": 4,
     "name": "Dread Elves",
     "icon": "dread.png",
+    "color": "#6f2b95",
     "background": "dread_background.jpg",
     "race": "Elves",
     "skills": [
@@ -190,6 +194,7 @@
     "id": 5,
     "name": "Dwarven Holds",
     "icon": "dwarven.png",
+    "color": "#b19e3c",
     "background": "dwarven_background.jpg",
     "race": "Dwarves",
     "skills": [
@@ -204,6 +209,7 @@
     "id": 7,
     "name": "Highborn Elves",
     "icon": "highelves.png",
+    "color": "#3c8bb1",
     "background": "high_background.jpg",
     "race": "Elves",
     "skills": [
@@ -217,6 +223,7 @@
     "id": 8,
     "name": "Infernal Dwarves",
     "icon": "infernal.png",
+    "color": "#b13c3c",
     "background": "infernal_background.jpg",
     "race": "Humain",
     "skills": [
@@ -230,6 +237,7 @@
     "id": 9,
     "name": "Kingdom of Equitaine",
     "icon": "equitaine.png",
+    "color": "#2ecca7",
     "background": "equitaine_background.jpg",
     "race": "Humain",
     "skills": [
@@ -243,6 +251,7 @@
     "id": 10,
     "name": "Ogre Khans",
     "icon": "ogre.png",
+    "color": "#c67f5d",
     "background": "ogre_background.jpg",
     "race": "Humain",
     "skills": [
@@ -257,6 +266,7 @@
     "name": "Orcs and Goblins",
     "background": "orc_background.jpg",
     "icon": "orc.png",
+    "color": "#257b23",
     "race": "Humain",
     "skills": [
       {
@@ -269,6 +279,7 @@
     "id": 12,
     "name": "Saurian Ancients",
     "icon": "saurian.png",
+    "color": "#525ea2",
     "background": "saurian_background.jpg",
     "race": "Humain",
     "skills": [
@@ -282,6 +293,7 @@
     "id": 13,
     "name": "Sylvan Elves",
     "icon": "sylvan.png",
+    "color": "#03b147",
     "background": "sylvan_background.jpg",
     "race": "Humain",
     "skills": [
@@ -295,6 +307,7 @@
     "id": 14,
     "name": "Undying Dynasties",
     "icon": "undying.png",
+    "color": "#59545c",
     "background": "undying_background.jpg",
     "race": "Humain",
     "skills": [
@@ -308,6 +321,7 @@
     "id": 15,
     "name": "Vampire Covenant",
     "icon": "vampire.png",
+    "color": "#c85a5a",
     "background": "vampire_background.jpg",
     "race": "Humain",
     "skills": [
@@ -320,6 +334,7 @@
   },  {
     "id": 16,
     "name": "Vermin Swarm",
+    "color": "#42663a",
     "background": "vermin_background.jpg",
     "icon": "vermin.png",
     "race": "Humain",
@@ -333,6 +348,7 @@
   },  {
     "id": 17,
     "name": "Warriors of the Dark Gods",
+    "color": "#805e5e",
     "background": "warrior_background.jpg",
     "icon": "warrior.png",
     "race": "Humain",

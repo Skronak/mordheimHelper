@@ -6,7 +6,7 @@ interface Props extends PropsWithChildren {
     onClose: () => void;
     title?: string;
     withButtons?: boolean;
-    onValidate: () => void;
+    onValidate?: () => void;
 }
 //https://codepen.io/chriscoyier/pen/MeJWoM
 export default function ModalWrapper(props: Props) {

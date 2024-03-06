@@ -35,22 +35,22 @@ export default function ListArmyPage() {
     return (
       <Layout title={'WARBANDS'}>
         <div className={'list-army-page'}>
-            <div className={'add-army-container'}>
-                <div className={'add-army-label'}>Availables list : {playerArmies.length}</div>
+            <div className={'list-army-top-menu'}>
+                <div>Availables list : {playerArmies.length}</div>
                 <button className={'icon-button btn-plus'} onClick={() => setShowPopup(true)}><img src={'./assets/icons/icon_plus.svg'}/></button>
             </div>
             {showPopup && (
-                <ArmySelectModal title="Pick an amy" onClose={() => setShowPopup(false)} data={appData}/>)}
+                <ArmySelectModal title="Race selection" onClose={() => setShowPopup(false)} data={appData}/>)}
 
             <div className="player-armies">
                 {playerArmies && playerArmies.map(army => (
-                    <span key={army.id} className={"user-army-row"}>
-                        <button className={"army-name btn-go"} onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>
-                            <img className={'army-logo'} src={getArmyIcon(appData, army.raceId)}/>
-                            <span className={'army-name army-title'}>{army.name}</span>
-                            <span className={'army-name army-cost'}>cost: {army.cost} gc</span>
-                            <span className={'army-name army-race'}>Race: {army.race}</span>
-                            <span className={'army-name army-last-update'}>Last update: {army.lastUpdate}</span>
+                  <span key={army.id} className={"user-army-row"}>
+                        <button className="user-army-row-btn" onClick={() => navigate('/mordheimHelper/edit/' + army.id)}>
+                            <img className={'army-field army-logo'} src={getArmyIcon(appData, army.raceId)}/>
+                            <span className={'army-field'}>{army.name}</span>
+                            <span className={'army-field'}>cost: {army.cost} gc</span>
+                            <span className={'army-field hide-on-mobile'}>Race: {army.race}</span>
+                            <span className={'army-field hide-on-mobile'}>Last update: {army.lastUpdate}</span>
                             <img className={'icon-go'} src={'./assets/icons/icon_chevron.svg'}/>
                         </button>
                         <button className={'icon-button btn-clone'} onClick={() => duplicateArmy(+army.id)}><img src={'./assets/icons/icon_clone.svg'}/></button>

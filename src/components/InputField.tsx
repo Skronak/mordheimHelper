@@ -22,7 +22,7 @@ export default function InputField({subClass, defaultValue, readonly, handleChan
     };
     return isEditing ? (
             <div className={subClass}>
-                <form className="Todo-edit-form" onSubmit={handleUpdate}>
+                <form className="input-edit" onSubmit={handleUpdate}>
                     <input onChange={handleChange} value={defaultValue} type="text"/>
                     <button>Save</button>
                 </form>

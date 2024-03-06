@@ -1,7 +1,13 @@
-.Todo-edit-form input,
-.Todo-edit-form button {
+.input-edit input {
+    color: black;
+    background-color: white;
+
+}
+
+.input-edit button {
     font-family: "Quicksand", sans-serif;
     height: 3rem;
+    background-color: red;
 }
 
 .Todo li {

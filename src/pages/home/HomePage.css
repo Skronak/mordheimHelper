@@ -49,10 +49,6 @@ button:hover {
   height: 4em;
 }
 
-.user-army-row{
-  display: flex;
-}
-
 .link-active{
   color: yellow;
 }

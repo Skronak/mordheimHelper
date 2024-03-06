@@ -20,7 +20,7 @@ export default function ArmySelectModal(props: Props) {
       <hr/>
       <div className={"armyList"}>
         {props.data.map(army => (
-          <button key={army.id} className={"army-name"} onClick={() => navigate('/mordheimHelper/create/' + army.id)}>
+          <button style={{backgroundColor: army.color}} key={army.id} className={"army-name"} onClick={() => navigate('/mordheimHelper/create/' + army.id)}>
             <img className={'army-logo'} src={getAssetUrlRoot(army.icon)}/>
             <span className={'army-name'}>{army.name}</span>
           </button>
