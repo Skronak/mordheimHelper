@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ArmyRef, Equipement, PlayerUnit, UnitRef} from "@/army";
+import {WarbandRef, Equipement, PlayerUnit, UnitRef} from "@/army";
 import {getPortraitAssetUrl} from "@/components/Utils";
 import "./unit-modal.css";
 import Layout from "@/pages/Layout";
@@ -16,7 +16,7 @@ interface Props {
     onEdit: (id: number, u: UnitRef, w: number[], a: number[]) => void;
     playerUnit?: PlayerUnit;
     data: UnitRef[];
-    armyRef: ArmyRef;
+    armyRef: WarbandRef;
 }
 
 export default function UnitPage(props: Props) {

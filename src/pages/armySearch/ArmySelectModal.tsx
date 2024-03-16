@@ -1,5 +1,5 @@
 import React from "react";
-import {ArmyRef} from "@/army";
+import {WarbandRef} from "@/army";
 import ModalWrapper from "@/components/ModalWrapper";
 import {getAssetUrlRoot} from "@/components/Utils";
 import './armySelectModal.css';
@@ -8,7 +8,7 @@ import {useNavigate} from "react-router-dom";
 interface Props {
   onClose: () => void;
   currentElement?: {};
-  data: ArmyRef[];
+  data: WarbandRef[];
   title: string;
 }
 

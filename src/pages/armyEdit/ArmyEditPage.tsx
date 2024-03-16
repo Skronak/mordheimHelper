@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import type {ArmyRef, PlayerArmy, PlayerUnit, UnitRef} from "@/army";
+import type {WarbandRef, UserWarband, PlayerUnit, UnitRef} from "@/army";
 import "./armyEditPage.css";
 import {useDataStore} from "@/store/dataStore";
 import {useNavigate} from "react-router-dom";
@@ -11,6 +11,8 @@ import {Accordion} from "@mantine/core";
 import '@mantine/carousel/styles.css';
 import UnitPage from "@/pages/armyEdit/unitEdit/UnitPage";
 import {capitalize} from "@mui/material";
+import { getDocs, addDoc, collection } from 'firebase/firestore';
+import {db} from "@/firebase/firebaseConfig";
 
 interface Props {
     armyId?: number;
@@ -32,11 +34,12 @@ function ArmyEditPage(props: Props) {
     const {appData} = useDataStore();
     const {playerArmies, setPlayerArmies} = useLocalStorageDataStore();
     const [open, setOpen] = React.useState(false);
-    const [armyRef, setArmyRef] = useState<ArmyRef>();
+    const [armyRef, setArmyRef] = useState<WarbandRef>();
     const [selectedPlayerUnit, setSelectedPlayerUnit] = useState<PlayerUnit>();
-    const [playerArmy, setPlayerArmy] = useState<PlayerArmy>(defaultPlayerArmy);
+    const [playerArmy, setPlayerArmy] = useState<UserWarband>(defaultPlayerArmy);
     const navigate = useNavigate();
     let unitType = ['heroes', 'henchmen'];
+    const userArmyCollection = collection(db, "userWarband");
 
     useEffect(() => {
         let raceId = props.raceId;
@@ -66,7 +69,7 @@ function ArmyEditPage(props: Props) {
         }
     }, [armyRef]);
 
-    const getArmyData = (raceId: number): ArmyRef => {
+    const getArmyData = (raceId: number): WarbandRef => {
 
         return appData.find(army => army.id === raceId) ?? {
             id: 0,
@@ -104,7 +107,17 @@ function ArmyEditPage(props: Props) {
         setPlayerArmies(newPlayerArmies);
         localStorage.setItem('playerArmies', JSON.stringify(newPlayerArmies));
 
+        storeData(playerArmy);
+
         navigate('/mordheimHelper/list');
+    }
+
+    const storeData = async(data: UserWarband) => {
+        try {
+            await addDoc(userArmyCollection, data)
+        } catch (err) {
+            console.log (err);
+        }
     }
 
     const handleClose = () => setOpen(false);

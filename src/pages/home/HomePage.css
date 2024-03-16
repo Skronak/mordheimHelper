@@ -46,7 +46,8 @@ button:hover {
 }
 
 .army-logo {
-  height: 4em;
+  padding-left: 0.5em;
+  height: 2em;
 }
 
 .link-active{

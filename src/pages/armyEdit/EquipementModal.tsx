@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ArmyRef, Equipement, PlayerUnit, UnitRef} from "@/army";
+import {WarbandRef, Equipement, PlayerUnit, UnitRef} from "@/army";
 import "./equipement-modal.css";
 import ModalWrapper from "@/components/ModalWrapper";
 import {useDataStore} from "@/store/dataStore";
@@ -11,7 +11,7 @@ interface Props {
   type: string;
   playerUnit?: PlayerUnit;
   data: UnitRef[];
-  armyRef: ArmyRef;
+  armyRef: WarbandRef;
 }
 
 export default function EquipementModal(props: Props) {

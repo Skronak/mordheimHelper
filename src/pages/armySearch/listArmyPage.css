@@ -58,11 +58,11 @@
 }
 
 .list-army-page .btn-delete {
-    margin-right: .5em;
     border-radius: .5em;
     background-color: #bd3c09;
     cursor: pointer;
     font-size: initial;
+    margin: 0 auto;
 }
 
 .list-army-page .btn-plus {

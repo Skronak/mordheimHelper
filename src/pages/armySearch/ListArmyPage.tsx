@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useDataStore} from "@/store/dataStore";
 import { Accordion, AccordionItem, AccordionControl} from '@mantine/core';
 import ArmySelectModal from "@/pages/armySearch/ArmySelectModal";
@@ -7,14 +7,33 @@ import {useNavigate} from "react-router-dom";
 import {useLocalStorageDataStore} from "@/store/localStorageDataStore";
 import Layout from "@/pages/Layout";
 import './listArmyPage.css';
+import { db } from "@/firebase/firebaseConfig";
+import { getDocs, collection } from 'firebase/firestore';
 
 export default function ListArmyPage() {
     const navigate = useNavigate();
-
     const {playerArmies, setPlayerArmies} = useLocalStorageDataStore();
     const {appData} = useDataStore();
-
     const [showPopup, setShowPopup] = useState(false);
+    const userArmyCollection = collection(db, "userWarband");
+
+    useEffect(() => {
+        const getPlayerArmies = async () => {
+            try {
+                const data = await getDocs(userArmyCollection);
+                const filteredData = data.docs.map((doc)=>({
+                    ...doc.data(),
+                    id: doc.id,
+                }))
+                console.log(filteredData);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        getPlayerArmies();
+    }, []);
+
 
     function deleteUserArmy(id: number) {
         let newPlayerArmies = playerArmies.filter(army => army.id !== id);

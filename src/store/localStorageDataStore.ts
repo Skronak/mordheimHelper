@@ -1,9 +1,9 @@
 import {create} from 'zustand'
-import {ArmyRef, PlayerArmy} from "@/army";
+import {WarbandRef, UserWarband} from "@/army";
 
 type DataStoreType = {
-    playerArmies: PlayerArmy[];
-    setPlayerArmies: (data: PlayerArmy[]) => void;
+    playerArmies: UserWarband[];
+    setPlayerArmies: (data: UserWarband[]) => void;
 }
 
 const initStore = () => {
@@ -25,5 +25,5 @@ const initStore = () => {
 
 export const useLocalStorageDataStore = create<DataStoreType>((set) => ({
     playerArmies: initStore(),
-    setPlayerArmies: (newData: PlayerArmy[]) => set({playerArmies: newData}),
+    setPlayerArmies: (newData: UserWarband[]) => set({playerArmies: newData}),
 }));

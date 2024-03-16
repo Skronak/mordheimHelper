@@ -1,5 +1,5 @@
 //DATA as represented by the JSON file
-export type ArmyData = {
+export type WarbandData = {
     id: number,
     name: string,
     race: string,
@@ -46,7 +46,7 @@ export type EquipementsData = {
     miscellaneaous: EquipementData[]
 }
 
-export type ArmyRef = {
+export type WarbandRef = {
     id: number,
     name: string,
     race: string;
@@ -98,7 +98,7 @@ export type Equipements = {
     miscellaneaous: Equipement[]
 }
 
-export type PlayerArmy = {
+export type UserWarband = {
     id: number;
     race: string;
     raceId: number;
