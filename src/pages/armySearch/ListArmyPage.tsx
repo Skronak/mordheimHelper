@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {useDataStore} from "@/store/dataStore";
-import { Accordion, AccordionItem, AccordionControl} from '@mantine/core';
 import ArmySelectModal from "@/pages/armySearch/ArmySelectModal";
 import {getArmyIcon} from "@/components/Utils";
 import {useNavigate} from "react-router-dom";
@@ -15,7 +14,7 @@ export default function ListArmyPage() {
     const {playerArmies, setPlayerArmies} = useLocalStorageDataStore();
     const {appData} = useDataStore();
     const [showPopup, setShowPopup] = useState(false);
-    const userArmyCollection = collection(db, "userWarband");
+    const userArmyCollection = useMemo(()=>collection(db, "userWarband"), [db]);//prevent db acces each render
 
     useEffect(() => {
         const getPlayerArmies = async () => {
@@ -24,8 +23,8 @@ export default function ListArmyPage() {
                 const filteredData = data.docs.map((doc)=>({
                     ...doc.data(),
                     id: doc.id,
-                }))
-                console.log(filteredData);
+                }));
+                setPlayerArmies(filteredData);
             } catch (err) {
                 console.log(err);
             }

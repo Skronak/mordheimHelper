@@ -11,7 +11,7 @@ import {Accordion} from "@mantine/core";
 import '@mantine/carousel/styles.css';
 import UnitPage from "@/pages/armyEdit/unitEdit/UnitPage";
 import {capitalize} from "@mui/material";
-import { getDocs, addDoc, collection } from 'firebase/firestore';
+import { addDoc, deleteDoc, updateDoc, doc, collection } from 'firebase/firestore';
 import {db} from "@/firebase/firebaseConfig";
 
 interface Props {
@@ -89,6 +89,7 @@ function ArmyEditPage(props: Props) {
             ...playerArmy,
             units: playerArmy.units.filter(unit => unit.id != id),
         });
+        deleteDB(playerArmy.id.toString());
     };
 
     const edit = (unit: PlayerUnit) => {
@@ -101,20 +102,43 @@ function ArmyEditPage(props: Props) {
 
         if (props.armyId) {
             newPlayerArmies = [playerArmy, ...playerArmies.filter(army => army.id !== props.armyId)];
+            updateDB(playerArmy);
         } else {
             newPlayerArmies = [...playerArmies, playerArmy];
+            addDB(playerArmy);
         }
         setPlayerArmies(newPlayerArmies);
         localStorage.setItem('playerArmies', JSON.stringify(newPlayerArmies));
 
-        storeData(playerArmy);
-
         navigate('/mordheimHelper/list');
     }
 
-    const storeData = async(data: UserWarband) => {
+    const addDB = async(data: UserWarband) => {
         try {
             await addDoc(userArmyCollection, data)
+                .then((res) => setPlayerArmy({
+                    ...data,
+                        id: res._key.path.segments[1]
+                })
+                );
+        } catch (err) {
+            console.log (err);
+        }
+    }
+
+    const updateDB = async(userWarband: UserWarband) => {
+        const data = doc(db, "userWarband", userWarband.id.toString())
+        try {
+            await updateDoc(data, {...userWarband});
+        } catch (err) {
+            console.log (err);
+        }
+    }
+
+    const deleteDB = async(id: string) => {
+        const data = doc(db, "userWarband", id)
+        try {
+            await deleteDoc(data);
         } catch (err) {
             console.log (err);
         }
